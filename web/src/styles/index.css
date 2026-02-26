@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
+}
+
+/* Drag and drop zone animation */
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(124, 58, 237, 0.3); }
+  50% { border-color: rgba(124, 58, 237, 0.8); }
+}
+
+.drag-active {
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+/* Glass morphism effects */
+.glass-panel {
+  background: rgba(26, 23, 48, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed, #6d28d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Progress bar animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.progress-shimmer {
+  background: linear-gradient(90deg,
+    rgba(124, 58, 237, 0.6) 0%,
+    rgba(167, 139, 250, 0.9) 50%,
+    rgba(124, 58, 237, 0.6) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Subtle glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15),
+              0 0 60px rgba(124, 58, 237, 0.05);
+}
+
+/* Image comparison slider custom styles */
+.comparison-slider [data-rcs="handle-container"] {
+  filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
+}
