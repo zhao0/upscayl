@@ -54,4 +54,5 @@ main/utils/*.js
 *.provisionprofile
 flags.ts
 *.p12
-dockerfile
+dockerfileweb/node_modules/
+server/node_modules/
