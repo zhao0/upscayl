@@ -1,60 +1,38 @@
-# Upscayl Web 部署指南
+# Upscayl Web — Deployment Guide
 
-## 前置要求
+## Prerequisites
 
-- **Node.js** 18+ 
-- **Linux** 服务器（需要 Vulkan 支持的 GPU 来运行 upscayl-bin）
+- **Node.js** 18+
+- **macOS / Linux / Windows** (binary auto-detected via `process.platform`)
+- GPU with Vulkan support (required by upscayl-bin)
 - Git
 
-## 部署步骤
-
-### 1. 克隆项目
+## Quick Start
 
 ```bash
+# 1. Clone
 git clone https://github.com/zhao0/upscayl.git
 cd upscayl
-```
 
-### 2. 确保 Linux 二进制可执行
+# 2. (Linux/macOS only) Ensure binary is executable
+chmod +x resources/linux/bin/upscayl-bin   # Linux
+chmod +x resources/mac/bin/upscayl-bin     # macOS
 
-```bash
-chmod +x resources/linux/bin/upscayl-bin
-```
+# 3. Build frontend
+cd web && npm install && npm run build && cd ..
 
-### 3. 构建前端
+# 4. Build backend
+cd server && npm install && npm run build
 
-```bash
-cd web
-npm install
-npm run build    # 输出到 web/dist/
-cd ..
-```
-
-### 4. 构建后端
-
-```bash
-cd server
-npm install
-npm run build    # TypeScript 编译到 server/dist/
-cd ..
-```
-
-### 5. 启动服务
-
-```bash
-cd server
+# 5. Start (production mode — frontend + API on single port)
 NODE_ENV=production PORT=3001 node dist/index.js
 ```
 
-生产模式下，Express 会同时：
-- 提供 API 服务（`/api/*`）
-- 托管前端静态文件（从 `web/dist/` 读取）
-
-访问 `http://your-server:3001` 即可使用。
+Visit `http://your-server:3001` to use.
 
 ---
 
-## 使用 PM2 守护进程（推荐）
+## Process Manager (PM2)
 
 ```bash
 npm install -g pm2
@@ -65,10 +43,10 @@ pm2 start dist/index.js --name upscayl-web \
   -- --PORT=3001
 
 pm2 save
-pm2 startup    # 开机自启
+pm2 startup    # auto-start on reboot
 ```
 
-## 使用 Nginx 反向代理（可选）
+## Nginx Reverse Proxy (Optional)
 
 ```nginx
 server {
@@ -87,7 +65,7 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 
-    # SSE 需要关闭缓冲
+    # Disable buffering for SSE progress events
     location /api/upscale/ {
         proxy_pass http://127.0.0.1:3001;
         proxy_buffering off;
@@ -99,24 +77,24 @@ server {
 }
 ```
 
-## 环境变量
+## Environment Variables
 
-| 变量 | 说明 | 默认值 |
-|------|------|--------|
-| `PORT` | 服务端口 | `3001` |
-| `NODE_ENV` | 环境（`production` 开启静态托管） | — |
-| `FRONTEND_URL` | 前端地址（仅非 production 模式需设置 CORS） | `http://localhost:5173` |
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PORT` | Server port | `3001` |
+| `NODE_ENV` | Set to `production` to enable static file serving | — |
+| `FRONTEND_URL` | CORS origin (only needed in non-production mode) | `http://localhost:5173` |
 
-## GPU 注意事项
+## GPU Requirements
 
-upscayl-bin 依赖 Vulkan，确保服务器已安装：
+upscayl-bin requires Vulkan support:
 
 ```bash
 # Ubuntu/Debian
 sudo apt install vulkan-tools mesa-vulkan-drivers
 
-# 验证 GPU 可用
+# Verify GPU availability
 vulkaninfo | head -20
 ```
 
-如果是无 GPU 的服务器，upscayl-bin 将无法运行。
+Without a GPU with Vulkan support, upscayl-bin will not run.
