@@ -1,16 +1,18 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
+import fs from "fs";
 import upscaleRoutes from "./routes/upscale";
 import modelsRoutes from "./routes/models";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const isProduction = process.env.NODE_ENV === "production";
 
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.FRONTEND_URL || (isProduction ? true : "http://localhost:5173"),
     credentials: true,
   })
 );
@@ -35,6 +37,18 @@ app.use("/api/models", modelsRoutes);
 app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
+
+// In production, serve the built frontend
+if (isProduction) {
+  const frontendDist = path.resolve(__dirname, "../../web/dist");
+  if (fs.existsSync(frontendDist)) {
+    app.use(express.static(frontendDist));
+    // SPA fallback — serve index.html for non-API routes
+    app.get("*", (_req, res) => {
+      res.sendFile(path.join(frontendDist, "index.html"));
+    });
+  }
+}
 
 // Error handling middleware
 app.use(
