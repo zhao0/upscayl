@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Pembesar Gambar AI",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Memproses..."
+  },
+  "settings": {
+    "aiModel": "Model AI",
+    "scale": "Skala",
+    "outputFormat": "Format Output",
+    "advanced": "Pengaturan Lanjutan",
+    "tileSize": "Ukuran Ubin",
+    "tileSizeAuto": "Otomatis",
+    "compression": "Kompresi",
+    "customWidth": "Lebar Kustom",
+    "customWidthPlaceholder": "Kosongkan untuk skala default",
+    "ttaMode": "Mode TTA (Kualitas Tinggi)",
+    "language": "Bahasa",
+    "loading": "Memuat..."
+  },
+  "modelDialog": {
+    "before": "Sebelum",
+    "after": "Sesudah",
+    "title": "Pilih Model AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Cocok untuk sebagian besar gambar."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Cocok untuk sebagian besar gambar. Upscaling berkecepatan tinggi dengan kehilangan kualitas minimal."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Non-Komersial)",
+      "description": "Untuk gambar natural."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Non-Komersial)",
+      "description": "Untuk gambar natural dengan keseimbangan ketajaman dan detail."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Non-Komersial)",
+      "description": "Untuk gambar natural dengan fokus pada ketajaman."
+    },
+    "digital-art-4x": {
+      "name": "Digital Art",
+      "description": "Untuk seni dan ilustrasi digital."
+    },
+    "high-fidelity-4x": {
+      "name": "High Fidelity",
+      "description": "Untuk semua jenis gambar dengan fokus pada detail realistis dan tekstur halus."
+    }
+  },
+  "uploader": {
+    "dragActive": "Lepaskan untuk mengunggah",
+    "dragPrompt": "Seret dan lepaskan gambar di sini",
+    "selectFile": "atau klik untuk memilih · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Maks 50 MB"
+  },
+  "progress": {
+    "uploading": "Mengunggah...",
+    "processing": "Pembesaran AI sedang berlangsung...",
+    "done": "Selesai!",
+    "error": "Pemrosesan gagal",
+    "stopped": "Dihentikan",
+    "stop": "Hentikan"
+  },
+  "result": {
+    "comparison": "Asli vs Diperbesar",
+    "reset": "Mulai Ulang",
+    "download": "Unduh",
+    "original": "← Asli",
+    "upscaled": "Diperbesar →"
+  }
+}

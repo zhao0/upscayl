@@ -1,4 +1,5 @@
 import { Loader2, CheckCircle2, XCircle, StopCircle } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 interface ProgressDisplayProps {
   status: "idle" | "uploading" | "processing" | "done" | "error" | "stopped";
@@ -13,6 +14,8 @@ export default function ProgressDisplay({
   error,
   onStop,
 }: ProgressDisplayProps) {
+  const t = useTranslation();
+
   if (status === "idle") return null;
 
   // Parse percentage from progress string like "45.00%"
@@ -26,26 +29,26 @@ export default function ProgressDisplay({
           <>
             <Loader2 size={20} className="text-primary animate-spin" />
             <span className="text-sm font-medium text-base-content/80">
-              {status === "uploading" ? "正在上传..." : "AI 放大处理中..."}
+              {status === "uploading" ? t("progress.uploading") : t("progress.processing")}
             </span>
           </>
         )}
         {status === "done" && (
           <>
             <CheckCircle2 size={20} className="text-success" />
-            <span className="text-sm font-medium text-success">处理完成!</span>
+            <span className="text-sm font-medium text-success">{t("progress.done")}</span>
           </>
         )}
         {status === "error" && (
           <>
             <XCircle size={20} className="text-error" />
-            <span className="text-sm font-medium text-error">处理失败</span>
+            <span className="text-sm font-medium text-error">{t("progress.error")}</span>
           </>
         )}
         {status === "stopped" && (
           <>
             <StopCircle size={20} className="text-warning" />
-            <span className="text-sm font-medium text-warning">已停止</span>
+            <span className="text-sm font-medium text-warning">{t("progress.stopped")}</span>
           </>
         )}
 
@@ -56,7 +59,7 @@ export default function ProgressDisplay({
             className="btn btn-ghost btn-xs ml-auto text-error hover:bg-error/10"
           >
             <StopCircle size={14} />
-            停止
+            {t("progress.stop")}
           </button>
         )}
       </div>

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "KI-Bildvergrößerer",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Verarbeitung..."
+  },
+  "settings": {
+    "aiModel": "KI-Modell",
+    "scale": "Skalierung",
+    "outputFormat": "Ausgabeformat",
+    "advanced": "Erweiterte Einstellungen",
+    "tileSize": "Kachelgröße",
+    "tileSizeAuto": "Auto",
+    "compression": "Komprimierung",
+    "customWidth": "Benutzerdefinierte Breite",
+    "customWidthPlaceholder": "Leer für Standardskalierung",
+    "ttaMode": "TTA-Modus (Höhere Qualität)",
+    "language": "Sprache",
+    "loading": "Laden..."
+  },
+  "modelDialog": {
+    "before": "Vorher",
+    "after": "Nachher",
+    "title": "KI-Modell auswählen"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Geeignet für die meisten Bilder."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Geeignet für die meisten Bilder. Schnelles Upscaling mit minimalen Qualitätsverlusten."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Nicht-kommerziell)",
+      "description": "Für natürliche Bilder. Zusätzliche Schärfe und Details. Keine kommerzielle Nutzung."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Nicht-kommerziell)",
+      "description": "Für natürliche Bilder mit einem Gleichgewicht aus Schärfe und Details."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Nicht-kommerziell)",
+      "description": "Für natürliche Bilder mit Fokus auf Schärfe."
+    },
+    "digital-art-4x": {
+      "name": "Digitale Kunst",
+      "description": "Für digitale Kunst und Illustrationen."
+    },
+    "high-fidelity-4x": {
+      "name": "High Fidelity",
+      "description": "Für alle Arten von Bildern mit Fokus auf realistische Details und glatte Texturen."
+    }
+  },
+  "uploader": {
+    "dragActive": "Loslassen zum Hochladen",
+    "dragPrompt": "Bild hierher ziehen",
+    "selectFile": "oder klicken · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Max 50 MB"
+  },
+  "progress": {
+    "uploading": "Hochladen...",
+    "processing": "KI-Vergrößerung läuft...",
+    "done": "Fertig!",
+    "error": "Verarbeitung fehlgeschlagen",
+    "stopped": "Gestoppt",
+    "stop": "Stopp"
+  },
+  "result": {
+    "comparison": "Original vs Vergrößert",
+    "reset": "Neustart",
+    "download": "Herunterladen",
+    "original": "← Original",
+    "upscaled": "Vergrößert →"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "ИИ увеличение изображений",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Увеличить 🚀",
+    "processing": "Обработка..."
+  },
+  "settings": {
+    "aiModel": "Модель ИИ",
+    "scale": "Масштаб",
+    "outputFormat": "Формат вывода",
+    "advanced": "Расширенные настройки",
+    "tileSize": "Размер тайла",
+    "tileSizeAuto": "Авто",
+    "compression": "Сжатие",
+    "customWidth": "Пользовательская ширина",
+    "customWidthPlaceholder": "Пусто для масштаба по умолчанию",
+    "ttaMode": "Режим TTA (Высокое качество)",
+    "language": "Язык",
+    "loading": "Загрузка..."
+  },
+  "modelDialog": {
+    "before": "До",
+    "after": "После",
+    "title": "Выберите модель ИИ"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl обычный",
+      "description": "Подходит для большинства изображений."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl лёгкий",
+      "description": "Подходит для большинства изображений. Высокоскоростное увеличение с минимальной потерей качества."
+    },
+    "remacri-4x": {
+      "name": "Remacri (не для коммерции)",
+      "description": "Для натуральных изображений. Добавляет резкость и детализацию. Не для коммерческого использования."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (не для коммерции)",
+      "description": "Для натуральных изображений с балансом резкости и детализации."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (не для коммерции)",
+      "description": "Для натуральных изображений с акцентом на резкость."
+    },
+    "digital-art-4x": {
+      "name": "Цифровое искусство",
+      "description": "Для цифрового искусства и иллюстраций."
+    },
+    "high-fidelity-4x": {
+      "name": "Высокая точность",
+      "description": "Для всех видов изображений с акцентом на реалистичные детали и гладкие текстуры."
+    }
+  },
+  "uploader": {
+    "dragActive": "Отпустите для загрузки",
+    "dragPrompt": "Перетащите изображение сюда",
+    "selectFile": "или нажмите для выбора · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Макс 50 МБ"
+  },
+  "progress": {
+    "uploading": "Загрузка...",
+    "processing": "ИИ увеличение...",
+    "done": "Готово!",
+    "error": "Ошибка обработки",
+    "stopped": "Остановлено",
+    "stop": "Стоп"
+  },
+  "result": {
+    "comparison": "Оригинал vs Увеличенное",
+    "reset": "Начать заново",
+    "download": "Скачать",
+    "original": "← Оригинал",
+    "upscaled": "Увеличенное →"
+  }
+}

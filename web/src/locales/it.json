@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Ingranditore immagini IA",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Elaborazione..."
+  },
+  "settings": {
+    "aiModel": "Modello IA",
+    "scale": "Scala",
+    "outputFormat": "Formato di uscita",
+    "advanced": "Impostazioni avanzate",
+    "tileSize": "Dimensione riquadro",
+    "tileSizeAuto": "Auto",
+    "compression": "Compressione",
+    "customWidth": "Larghezza personalizzata",
+    "customWidthPlaceholder": "Vuoto per scala predefinita",
+    "ttaMode": "Modalità TTA (Qualità superiore)",
+    "language": "Lingua",
+    "loading": "Caricamento..."
+  },
+  "modelDialog": {
+    "before": "Prima",
+    "after": "Dopo",
+    "title": "Seleziona modello AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Adatto per la maggior parte delle immagini."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Adatto per la maggior parte delle immagini. Sovracampionamento veloce con perdita di qualità minima."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Non-Commerciale)",
+      "description": "Per immagini naturali. Aggiunge nitidezza e dettaglio. Nessun uso commerciale."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Non-Commerciale)",
+      "description": "Per immagini naturali con un equilibrio tra nitidezza e dettaglio."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Non-Commerciale)",
+      "description": "Per immagini naturali con un'enfasi sulla nitidezza."
+    },
+    "digital-art-4x": {
+      "name": "Arte digitale",
+      "description": "Per arte digitale e illustrazioni."
+    },
+    "high-fidelity-4x": {
+      "name": "Alta fedeltà",
+      "description": "Per tutti i tipi di immagini con un'enfasi su dettagli realistici e texture morbide."
+    }
+  },
+  "uploader": {
+    "dragActive": "Rilascia per caricare",
+    "dragPrompt": "Trascina un'immagine qui",
+    "selectFile": "o clicca per selezionare · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Max 50 MB"
+  },
+  "progress": {
+    "uploading": "Caricamento...",
+    "processing": "Ingrandimento IA in corso...",
+    "done": "Fatto!",
+    "error": "Elaborazione fallita",
+    "stopped": "Fermato",
+    "stop": "Ferma"
+  },
+  "result": {
+    "comparison": "Originale vs Ingrandito",
+    "reset": "Ricominciare",
+    "download": "Scarica",
+    "original": "← Originale",
+    "upscaled": "Ingrandito →"
+  }
+}

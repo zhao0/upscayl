@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "AI Image Upscaler",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Processing..."
+  },
+  "settings": {
+    "aiModel": "AI Model",
+    "scale": "Image Scale",
+    "outputFormat": "Output Format",
+    "advanced": "Advanced Settings",
+    "tileSize": "Tile Size",
+    "tileSizeAuto": "Auto",
+    "compression": "Compression",
+    "customWidth": "Custom Width",
+    "customWidthPlaceholder": "Leave empty for default scale",
+    "ttaMode": "TTA Mode (Higher Quality)",
+    "language": "Language",
+    "loading": "Loading..."
+  },
+  "modelDialog": {
+    "before": "Before",
+    "after": "After",
+    "title": "Select AI Model"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Suitable for most images."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Suitable for most images. High-speed upscaling with minimal quality loss."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Non-Commercial)",
+      "description": "For natural images. Added sharpness and detail. No commercial use."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Non-Commercial)",
+      "description": "For natural images with a balance of sharpness and detail."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Non-Commercial)",
+      "description": "For natural images with a focus on sharpness."
+    },
+    "digital-art-4x": {
+      "name": "Digital Art",
+      "description": "For digital art and illustrations."
+    },
+    "high-fidelity-4x": {
+      "name": "High Fidelity",
+      "description": "For all kinds of images with a focus on realistic details and smooth textures."
+    }
+  },
+  "uploader": {
+    "dragActive": "Release to upload",
+    "dragPrompt": "Drag & drop image here",
+    "selectFile": "or click to select · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Max 50 MB"
+  },
+  "progress": {
+    "uploading": "Uploading...",
+    "processing": "AI upscaling in progress...",
+    "done": "Done!",
+    "error": "Processing failed",
+    "stopped": "Stopped",
+    "stop": "Stop"
+  },
+  "result": {
+    "comparison": "Original vs Upscaled",
+    "reset": "Start Over",
+    "download": "Download",
+    "original": "← Original",
+    "upscaled": "Upscaled →"
+  }
+}

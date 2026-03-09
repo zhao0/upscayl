@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getModels, ModelInfo, UpscaleParams } from "../api/client";
-import { Settings, Zap, Layers, Maximize2 } from "lucide-react";
+import { Settings, Zap, Layers, Maximize2, Globe } from "lucide-react";
+import SelectModelDialog from "./SelectModelDialog";
+import { useTranslation, useLocale, LOCALE_LABELS, Locale } from "../i18n";
 
 interface SettingsPanelProps {
   params: UpscaleParams;
@@ -13,6 +15,8 @@ export default function SettingsPanel({
   onChange,
   disabled,
 }: SettingsPanelProps) {
+  const t = useTranslation();
+  const { locale, setLocale } = useLocale();
   const [models, setModels] = useState<ModelInfo[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,27 +33,42 @@ export default function SettingsPanel({
 
   return (
     <div className="flex flex-col gap-4">
+      {/* Language Switcher */}
+      <div className="form-control">
+        <label className="label">
+          <span className="label-text flex items-center gap-2 text-sm font-medium">
+            <Globe size={14} className="text-primary" />
+            {t("settings.language")}
+          </span>
+        </label>
+        <select
+          className="select select-bordered select-sm w-full bg-base-200/50 border-base-content/10 focus:border-primary transition-colors"
+          value={locale}
+          onChange={(e) => setLocale(e.target.value as Locale)}
+        >
+          {Object.entries(LOCALE_LABELS).map(([code, label]) => (
+            <option key={code} value={code}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Model Selection */}
       <div className="form-control">
         <label className="label">
           <span className="label-text flex items-center gap-2 text-sm font-medium">
             <Zap size={14} className="text-primary" />
-            AI 模型
+            {t("settings.aiModel")}
           </span>
         </label>
-        <select
-          className="select select-bordered select-sm w-full bg-base-200/50 border-base-content/10 focus:border-primary transition-colors"
-          value={params.model}
-          onChange={(e) => update("model", e.target.value)}
-          disabled={disabled || loading}
-        >
-          {loading && <option>加载中...</option>}
-          {models.map((m) => (
-            <option key={m.id} value={m.id}>
-              {m.name}
-            </option>
-          ))}
-        </select>
+        <SelectModelDialog
+          models={models}
+          selectedModel={params.model}
+          onSelect={(modelId) => update("model", modelId)}
+          disabled={disabled}
+          loading={loading}
+        />
       </div>
 
       {/* Scale */}
@@ -57,7 +76,7 @@ export default function SettingsPanel({
         <label className="label">
           <span className="label-text flex items-center gap-2 text-sm font-medium">
             <Maximize2 size={14} className="text-primary" />
-            放大倍数
+            {t("settings.scale")}
           </span>
         </label>
         <div className="flex gap-2">
@@ -83,7 +102,7 @@ export default function SettingsPanel({
         <label className="label">
           <span className="label-text flex items-center gap-2 text-sm font-medium">
             <Layers size={14} className="text-primary" />
-            输出格式
+            {t("settings.outputFormat")}
           </span>
         </label>
         <div className="flex gap-2">
@@ -109,16 +128,16 @@ export default function SettingsPanel({
         <input type="checkbox" />
         <div className="collapse-title text-sm font-medium flex items-center gap-2 py-3 min-h-0">
           <Settings size={14} className="text-primary" />
-          高级设置
+          {t("settings.advanced")}
         </div>
         <div className="collapse-content pb-4">
           <div className="flex flex-col gap-3 pt-2">
             {/* Tile Size */}
             <div className="form-control">
               <label className="label py-1">
-                <span className="label-text text-xs">Tile Size</span>
+                <span className="label-text text-xs">{t("settings.tileSize")}</span>
                 <span className="label-text-alt text-xs text-base-content/40">
-                  {params.tileSize || "自动"}
+                  {params.tileSize || t("settings.tileSizeAuto")}
                 </span>
               </label>
               <input
@@ -141,7 +160,7 @@ export default function SettingsPanel({
             {/* Compression */}
             <div className="form-control">
               <label className="label py-1">
-                <span className="label-text text-xs">压缩率</span>
+                <span className="label-text text-xs">{t("settings.compression")}</span>
                 <span className="label-text-alt text-xs text-base-content/40">
                   {params.compression || "0"}
                 </span>
@@ -161,11 +180,11 @@ export default function SettingsPanel({
             {/* Custom Width */}
             <div className="form-control">
               <label className="label py-1">
-                <span className="label-text text-xs">自定义宽度</span>
+                <span className="label-text text-xs">{t("settings.customWidth")}</span>
               </label>
               <input
                 type="number"
-                placeholder="留空使用默认倍数"
+                placeholder={t("settings.customWidthPlaceholder")}
                 value={params.customWidth || ""}
                 onChange={(e) =>
                   update("customWidth", e.target.value || undefined)
@@ -178,7 +197,7 @@ export default function SettingsPanel({
             {/* TTA Mode */}
             <div className="form-control">
               <label className="label cursor-pointer py-1">
-                <span className="label-text text-xs">TTA 模式 (更高质量)</span>
+                <span className="label-text text-xs">{t("settings.ttaMode")}</span>
                 <input
                   type="checkbox"
                   className="toggle toggle-primary toggle-xs"

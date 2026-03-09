@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "أداة تكبير الصور بالذكاء الاصطناعي",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "جاري المعالجة..."
+  },
+  "settings": {
+    "aiModel": "نموذج AI",
+    "scale": "المقياس",
+    "outputFormat": "صيغة الإخراج",
+    "advanced": "إعدادات متقدمة",
+    "tileSize": "حجم البلاط",
+    "tileSizeAuto": "تلقائي",
+    "compression": "الضغط",
+    "customWidth": "عرض مخصص",
+    "customWidthPlaceholder": "اتركه فارغاً للمقياس الافتراضي",
+    "ttaMode": "وضع TTA (جودة أعلى)",
+    "language": "اللغة",
+    "loading": "جاري التحميل..."
+  },
+  "modelDialog": {
+    "before": "قبل",
+    "after": "بعد",
+    "title": "اختر نموذج الذكاء"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "ابسكيل الاعتيادي",
+      "description": "يفضل لأغلب الصور"
+    },
+    "upscayl-lite-4x": {
+      "name": "ابسكيل المخفف",
+      "description": "مناسب لاغلب الصور لاكن اسرع مع بعض خسائر في الجودة"
+    },
+    "remacri-4x": {
+      "name": "Remacri (Non-Commercial)",
+      "description": "للصور الطبيعة اضافة حدة "
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Non-Commercial)",
+      "description": "للصور الطبيعية مع توازن في التفاصيل و الحدة"
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Non-Commercial)",
+      "description": "للصور الطبيعية مع تركيز على الحدة"
+    },
+    "digital-art-4x": {
+      "name": "الرسم الرقمي",
+      "description": "مناسب للرسم الرقمي"
+    },
+    "high-fidelity-4x": {
+      "name": "دقة عالية",
+      "description": "لكل انواع الصور مع التركيز على واقعية التفاصيل و نعومة الاكساء"
+    }
+  },
+  "uploader": {
+    "dragActive": "أفلت للرفع",
+    "dragPrompt": "اسحب وأفلت صورة هنا",
+    "selectFile": "أو انقر للاختيار · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "الحد الأقصى 50 ميغابايت"
+  },
+  "progress": {
+    "uploading": "جاري الرفع...",
+    "processing": "تكبير AI قيد التقدم...",
+    "done": "تم!",
+    "error": "فشلت المعالجة",
+    "stopped": "متوقف",
+    "stop": "إيقاف"
+  },
+  "result": {
+    "comparison": "الأصل vs المكبر",
+    "reset": "إعادة البدء",
+    "download": "تحميل",
+    "original": "الأصل →",
+    "upscaled": "← المكبر"
+  }
+}

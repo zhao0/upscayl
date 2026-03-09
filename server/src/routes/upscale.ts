@@ -131,7 +131,6 @@ router.get("/:jobId/progress", (req: Request, res: Response) => {
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
     Connection: "keep-alive",
-    "Access-Control-Allow-Origin": "*",
   });
 
   // Send current status immediately
@@ -146,7 +145,7 @@ router.get("/:jobId/progress", (req: Request, res: Response) => {
     job.status === "stopped"
   ) {
     if (job.status === "done") {
-      res.write(`event: done\ndata: ${JSON.stringify(job.outputPath)}\n\n`);
+      res.write(`event: done\ndata: ${JSON.stringify(job.id)}\n\n`);
     } else if (job.status === "error") {
       res.write(
         `event: error\ndata: ${JSON.stringify(job.error || "Unknown error")}\n\n`

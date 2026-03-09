@@ -16,6 +16,7 @@ export interface JobStatus {
 export interface ModelInfo {
   id: string;
   name: string;
+  description: string;
 }
 
 export interface UpscaleParams {

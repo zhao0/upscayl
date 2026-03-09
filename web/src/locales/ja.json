@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "AI 画像アップスケーラー",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "アップスケール開始",
+    "processing": "処理中..."
+  },
+  "settings": {
+    "aiModel": "AI モデル",
+    "scale": "拡大倍率",
+    "outputFormat": "出力形式",
+    "advanced": "詳細設定",
+    "tileSize": "タイルサイズ",
+    "tileSizeAuto": "自動",
+    "compression": "圧縮率",
+    "customWidth": "カスタム幅",
+    "customWidthPlaceholder": "デフォルトの倍率を使用",
+    "ttaMode": "TTA モード（高品質）",
+    "language": "言語",
+    "loading": "読み込み中..."
+  },
+  "modelDialog": {
+    "before": "前",
+    "after": "後",
+    "title": "AIモデルを選択"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscaylスタンダード",
+      "description": "ほとんどの画像に適しています。"
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscaylライト",
+      "description": "ほとんどの画像に適しています。最小限の品質損失で高速アップスケーリング。"
+    },
+    "remacri-4x": {
+      "name": "Remacri（非商用）",
+      "description": "自然な画像に適しています。シャープネスとディテールが追加されます。商用利用不可。"
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix（非商用）",
+      "description": "シャープネスとディテールのバランスが取れた自然な画像に適しています。"
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp（非商用）",
+      "description": "シャープネスに重点を置いた自然な画像に適しています。"
+    },
+    "digital-art-4x": {
+      "name": "デジタルアート",
+      "description": "デジタルアートやイラストに適しています。"
+    },
+    "high-fidelity-4x": {
+      "name": "高忠実度",
+      "description": "リアルなディテールと滑らかなテクスチャに重点を置いたあらゆる種類の画像に適しています。"
+    }
+  },
+  "uploader": {
+    "dragActive": "ドロップしてアップロード",
+    "dragPrompt": "ここに画像をドラッグ＆ドロップ",
+    "selectFile": "またはクリックして選択 · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "最大 50 MB"
+  },
+  "progress": {
+    "uploading": "アップロード中...",
+    "processing": "AI アップスケール処理中...",
+    "done": "完了！",
+    "error": "処理失敗",
+    "stopped": "停止済み",
+    "stop": "停止"
+  },
+  "result": {
+    "comparison": "オリジナル vs アップスケール",
+    "reset": "やり直す",
+    "download": "ダウンロード",
+    "original": "← オリジナル",
+    "upscaled": "アップスケール後 →"
+  }
+}

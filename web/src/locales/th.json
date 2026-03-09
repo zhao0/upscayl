@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "เครื่องมือขยายภาพ AI",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "กำลังประมวลผล..."
+  },
+  "settings": {
+    "aiModel": "โมเดล AI",
+    "scale": "อัตราส่วน",
+    "outputFormat": "รูปแบบไฟล์",
+    "advanced": "ตั้งค่าขั้นสูง",
+    "tileSize": "ขนาดไทล์",
+    "tileSizeAuto": "อัตโนมัติ",
+    "compression": "การบีบอัด",
+    "customWidth": "ความกว้างกำหนดเอง",
+    "customWidthPlaceholder": "เว้นว่างเพื่อใช้อัตราส่วนเริ่มต้น",
+    "ttaMode": "โหมด TTA (คุณภาพสูง)",
+    "language": "ภาษา",
+    "loading": "กำลังโหลด..."
+  },
+  "modelDialog": {
+    "before": "ก่อน",
+    "after": "หลัง",
+    "title": "เลือกโมเดล AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl แบบมาตรฐาน",
+      "description": "เหมาะกับรูปส่วนใหญ่"
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl แบบเล็ก",
+      "description": "เหมาะกับรูปส่วนใหญ่ เป็นการเพิ่มขนาดด้วยความเร็วสูงและมีการสูญเสียคุณภาพน้อย"
+    },
+    "remacri-4x": {
+      "name": "Remacri (ไม่ใช่เชิงพาณิชย์)",
+      "description": "สำหรับรูปที่ดูเป็นธรรมชาติ จะเพิ่มความคมชัดและรายละเอียด ไม่ใช้ในเชิงพาณิชย์"
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (ไม่ใช่เชิงพาณิชย์)",
+      "description": "สำหรับรูปที่ดูเป็นธรรมชาติโดยปรับสมดุลของความคมชัดและรายละเอียด"
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (ไม่ใช่เชิงพาณิชย์)",
+      "description": "สำหรับรูปที่ดูเป็นธรรมชาติที่เน้นความคมชัด"
+    },
+    "digital-art-4x": {
+      "name": "ศิลปะดิจิตอล",
+      "description": "สำหรับงานศิลปะดิจิทัลและภาพประกอบ"
+    },
+    "high-fidelity-4x": {
+      "name": "คุณภาพสูง",
+      "description": "สำหรับรูปทุกประเภท โดยเน้นรายละเอียดที่สมจริงและพื้นผิวที่เรียบเนียน"
+    }
+  },
+  "uploader": {
+    "dragActive": "ปล่อยเพื่ออัปโหลด",
+    "dragPrompt": "ลากและวางรูปภาพที่นี่",
+    "selectFile": "หรือคลิกเพื่อเลือก · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "สูงสุด 50 MB"
+  },
+  "progress": {
+    "uploading": "กำลังอัปโหลด...",
+    "processing": "กำลังขยายภาพ AI...",
+    "done": "เสร็จสิ้น!",
+    "error": "การประมวลผลล้มเหลว",
+    "stopped": "หยุดแล้ว",
+    "stop": "หยุด"
+  },
+  "result": {
+    "comparison": "ต้นฉบับ vs ขยายแล้ว",
+    "reset": "เริ่มใหม่",
+    "download": "ดาวน์โหลด",
+    "original": "← ต้นฉบับ",
+    "upscaled": "ขยายแล้ว →"
+  }
+}

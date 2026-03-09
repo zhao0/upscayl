@@ -3,6 +3,7 @@ import {
   ReactCompareSliderImage,
 } from "react-compare-slider";
 import { Download, ZoomIn, RotateCcw } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 interface ResultViewerProps {
   originalUrl: string;
@@ -17,6 +18,8 @@ export default function ResultViewer({
   downloadUrl,
   onReset,
 }: ResultViewerProps) {
+  const t = useTranslation();
+
   return (
     <div className="flex flex-col h-full gap-4">
       {/* Action bar */}
@@ -24,13 +27,13 @@ export default function ResultViewer({
         <div className="flex items-center gap-2">
           <ZoomIn size={16} className="text-primary" />
           <span className="text-sm font-medium text-base-content/70">
-            原图 vs 放大图对比
+            {t("result.comparison")}
           </span>
         </div>
         <div className="flex gap-2">
           <button onClick={onReset} className="btn btn-ghost btn-sm gap-1">
             <RotateCcw size={14} />
-            重新开始
+            {t("result.reset")}
           </button>
           <a
             href={downloadUrl}
@@ -38,7 +41,7 @@ export default function ResultViewer({
             className="btn btn-primary btn-sm gap-1 shadow-lg shadow-primary/25"
           >
             <Download size={14} />
-            下载结果
+            {t("result.download")}
           </a>
         </div>
       </div>
@@ -58,8 +61,8 @@ export default function ResultViewer({
 
       {/* Labels */}
       <div className="flex justify-between text-xs text-base-content/40 px-2">
-        <span>← 原图</span>
-        <span>放大后 →</span>
+        <span>{t("result.original")}</span>
+        <span>{t("result.upscaled")}</span>
       </div>
     </div>
   );

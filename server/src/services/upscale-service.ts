@@ -19,7 +19,8 @@ function getExecPath(): string {
     throw new Error(`Unsupported platform: ${platform}`);
   }
 
-  const execPath = path.join(binDir, "upscayl-bin");
+  const binName = platform === "win32" ? "upscayl-bin.exe" : "upscayl-bin";
+  const execPath = path.join(binDir, binName);
   if (!fs.existsSync(execPath)) {
     throw new Error(`upscayl-bin not found at: ${execPath}`);
   }
@@ -158,13 +159,45 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
     if (!failed && currentJob?.status !== "stopped") {
       console.log(`✅ Job ${job.id} completed`);
       jobManager.updateJob(job.id, { status: "done", progress: "100%" });
-      jobManager.broadcastProgress(job.id, "done", job.outputPath);
+      jobManager.broadcastProgress(job.id, "done", job.id);
     }
   });
 }
 
+/** Model metadata with display names and descriptions */
+const MODEL_META: Record<string, { name: string; description: string }> = {
+  "upscayl-standard-4x": {
+    name: "Upscayl 标准",
+    description: "适用于大多数图像。",
+  },
+  "upscayl-lite-4x": {
+    name: "Upscayl 轻量版",
+    description: "适用于大多数图像。高速升图，质量损失最小。",
+  },
+  "remacri-4x": {
+    name: "Remacri（非商业用途）",
+    description: "适用于自然图像。增加了锐度和细节。不用于商业用途。",
+  },
+  "ultramix-balanced-4x": {
+    name: "Ultramix（非商业用途）",
+    description: "适用于自然图像，平衡了锐度和细节。",
+  },
+  "ultrasharp-4x": {
+    name: "Ultrasharp（非商业用途）",
+    description: "适用于自然图像，注重锐度。",
+  },
+  "digital-art-4x": {
+    name: "数字艺术",
+    description: "适用于数字艺术和插图。",
+  },
+  "high-fidelity-4x": {
+    name: "高保真",
+    description: "适用于各种图像，注重真实细节和平滑纹理。",
+  },
+};
+
 /** List available models from the models directory */
-export function listModels(): { id: string; name: string }[] {
+export function listModels(): { id: string; name: string; description: string }[] {
   const modelsPath = getModelsPath();
   if (!fs.existsSync(modelsPath)) {
     return [];
@@ -181,6 +214,7 @@ export function listModels(): { id: string; name: string }[] {
 
   return Array.from(modelNames).map((name) => ({
     id: name,
-    name: name,
+    name: MODEL_META[name]?.name || name,
+    description: MODEL_META[name]?.description || "",
   }));
 }

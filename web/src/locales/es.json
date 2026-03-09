@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Escalador de imágenes IA",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Procesando..."
+  },
+  "settings": {
+    "aiModel": "Modelo IA",
+    "scale": "Escala",
+    "outputFormat": "Formato de salida",
+    "advanced": "Configuración avanzada",
+    "tileSize": "Tamaño de mosaico",
+    "tileSizeAuto": "Auto",
+    "compression": "Compresión",
+    "customWidth": "Ancho personalizado",
+    "customWidthPlaceholder": "Vacío para escala predeterminada",
+    "ttaMode": "Modo TTA (Mayor calidad)",
+    "language": "Idioma",
+    "loading": "Cargando..."
+  },
+  "modelDialog": {
+    "before": "Antes",
+    "after": "Después",
+    "title": "Seleccionar modelo de IA"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Estándar",
+      "description": "Adecuado para la mayoría de las imágenes."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Adecuado para la mayoría de las imágenes. Aumento de velocidad alta con mínima pérdida de calidad."
+    },
+    "remacri-4x": {
+      "name": "Remacri (No Comercial)",
+      "description": "Para imágenes naturales. Añade nitidez y detalle. No uso comercial."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (No Comercial)",
+      "description": "Para imágenes naturales con un equilibrio de nitidez y detalle."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultranítido (No Comercial)",
+      "description": "Para imágenes naturales con un enfoque en la nitidez."
+    },
+    "digital-art-4x": {
+      "name": "Arte Digital",
+      "description": "Para arte digital e ilustraciones."
+    },
+    "high-fidelity-4x": {
+      "name": "Alta Fidelidad",
+      "description": "Para todo tipo de imágenes con un enfoque en detalles realistas y texturas suaves."
+    }
+  },
+  "uploader": {
+    "dragActive": "Suelta para subir",
+    "dragPrompt": "Arrastra y suelta una imagen aquí",
+    "selectFile": "o haz clic para seleccionar · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Máx 50 MB"
+  },
+  "progress": {
+    "uploading": "Subiendo...",
+    "processing": "Escalado IA en progreso...",
+    "done": "¡Listo!",
+    "error": "Error en el procesamiento",
+    "stopped": "Detenido",
+    "stop": "Detener"
+  },
+  "result": {
+    "comparison": "Original vs Escalado",
+    "reset": "Reiniciar",
+    "download": "Descargar",
+    "original": "← Original",
+    "upscaled": "Escalado →"
+  }
+}

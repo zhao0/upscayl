@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "AI Képnagyító",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Feldolgozás..."
+  },
+  "settings": {
+    "aiModel": "AI Modell",
+    "scale": "Méretezés",
+    "outputFormat": "Kimeneti formátum",
+    "advanced": "Haladó beállítások",
+    "tileSize": "Csempeméret",
+    "tileSizeAuto": "Automatikus",
+    "compression": "Tömörítés",
+    "customWidth": "Egyéni szélesség",
+    "customWidthPlaceholder": "Üres = alapértelmezett méretezés",
+    "ttaMode": "TTA mód (Magasabb minőség)",
+    "language": "Nyelv",
+    "loading": "Betöltés..."
+  },
+  "modelDialog": {
+    "before": "Előtte",
+    "after": "Utána",
+    "title": "AI modell kiválasztása"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "A legtöbb képhez alkalmas."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "A legtöbb képhez alkalmas. Nagysebességű felnagyítás minimális minőségvesztéssel."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Nem Kereskedelmi)",
+      "description": "Természetes képekhez. Élesítés és részletgazdagítás. Nem kereskedelmi használatra."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Nem Kereskedelmi)",
+      "description": "Természetes képekhez, egyensúlyban tartja az élességet és a részleteket."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Nem Kereskedelmi)",
+      "description": "Természetes képekhez, főként az élességre fókuszálva."
+    },
+    "digital-art-4x": {
+      "name": "Digital Art",
+      "description": "Digitális művészethez és illusztrációkhoz."
+    },
+    "high-fidelity-4x": {
+      "name": "High Fidelity",
+      "description": "Mindenféle képhez, a realisztikus részletek és sima textúrák kiemelésével."
+    }
+  },
+  "uploader": {
+    "dragActive": "Engedje el a feltöltéshez",
+    "dragPrompt": "Húzzon ide egy képet",
+    "selectFile": "vagy kattintson a kiválasztáshoz · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Max 50 MB"
+  },
+  "progress": {
+    "uploading": "Feltöltés...",
+    "processing": "AI nagyítás folyamatban...",
+    "done": "Kész!",
+    "error": "Feldolgozás sikertelen",
+    "stopped": "Megállítva",
+    "stop": "Leállítás"
+  },
+  "result": {
+    "comparison": "Eredeti vs Nagyított",
+    "reset": "Újrakezdés",
+    "download": "Letöltés",
+    "original": "← Eredeti",
+    "upscaled": "Nagyított →"
+  }
+}

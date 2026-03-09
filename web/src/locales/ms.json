@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Pembesar Imej AI",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Memproses..."
+  },
+  "settings": {
+    "aiModel": "Model AI",
+    "scale": "Skala",
+    "outputFormat": "Format Output",
+    "advanced": "Tetapan Lanjutan",
+    "tileSize": "Saiz Jubin",
+    "tileSizeAuto": "Auto",
+    "compression": "Pemampatan",
+    "customWidth": "Lebar Tersuai",
+    "customWidthPlaceholder": "Kosong untuk skala lalai",
+    "ttaMode": "Mod TTA (Kualiti Tinggi)",
+    "language": "Bahasa",
+    "loading": "Memuatkan..."
+  },
+  "modelDialog": {
+    "before": "Sebelum",
+    "after": "Selepas",
+    "title": "Pilih Model AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Sesuai untuk kebanyakan imej."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Sesuai untuk kebanyakan imej. Peningkatan saiz berkelajuan tinggi dengan kehilangan kualiti yang minimum."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Bukan Komersial)",
+      "description": "Untuk imej semula jadi. Ketajaman dan perincian ditambah. Tiada penggunaan komersial."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Bukan Komersial)",
+      "description": "Untuk imej semula jadi dengan keseimbangan ketajaman dan perincian."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Bukan Komersial)",
+      "description": "Untuk imej semula jadi dengan fokus pada ketajaman."
+    },
+    "digital-art-4x": {
+      "name": "Digital Art",
+      "description": "Untuk seni digital dan ilustrasi."
+    },
+    "high-fidelity-4x": {
+      "name": "High Fidelity",
+      "description": "Untuk semua jenis imej dengan fokus pada perincian realistik dan tekstur lancar."
+    }
+  },
+  "uploader": {
+    "dragActive": "Lepaskan untuk muat naik",
+    "dragPrompt": "Seret dan lepaskan imej di sini",
+    "selectFile": "atau klik untuk memilih · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Maks 50 MB"
+  },
+  "progress": {
+    "uploading": "Memuat naik...",
+    "processing": "Pembesaran AI sedang berjalan...",
+    "done": "Siap!",
+    "error": "Pemprosesan gagal",
+    "stopped": "Dihentikan",
+    "stop": "Henti"
+  },
+  "result": {
+    "comparison": "Asal vs Dibesarkan",
+    "reset": "Mula Semula",
+    "download": "Muat Turun",
+    "original": "← Asal",
+    "upscaled": "Dibesarkan →"
+  }
+}

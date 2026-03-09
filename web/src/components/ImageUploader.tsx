@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { Upload, ImagePlus, X } from "lucide-react";
+import { useTranslation } from "../i18n";
 
 interface ImageUploaderProps {
   onFileSelect: (file: File) => void;
@@ -16,6 +17,7 @@ export default function ImageUploader({
   disabled,
   onClear,
 }: ImageUploaderProps) {
+  const t = useTranslation();
   const [isDragging, setIsDragging] = useState(false);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -126,12 +128,12 @@ export default function ImageUploader({
         </div>
         <div className="text-center">
           <p className="text-base font-semibold text-base-content/80">
-            {isDragging ? "释放以上传图片" : "拖拽图片到此处"}
+            {isDragging ? t("uploader.dragActive") : t("uploader.dragPrompt")}
           </p>
           <p className="text-sm text-base-content/50 mt-1">
-            或点击选择文件 · 支持 PNG, JPG, WebP, BMP, TIFF
+            {t("uploader.selectFile")}
           </p>
-          <p className="text-xs text-base-content/30 mt-2">最大 50 MB</p>
+          <p className="text-xs text-base-content/30 mt-2">{t("uploader.maxSize")}</p>
         </div>
       </div>
     </label>

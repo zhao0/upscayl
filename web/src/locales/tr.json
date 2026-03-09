@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "AI Görüntü Büyütücü",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "İşleniyor..."
+  },
+  "settings": {
+    "aiModel": "AI Model",
+    "scale": "Ölçek",
+    "outputFormat": "Çıkış Formatı",
+    "advanced": "Gelişmiş Ayarlar",
+    "tileSize": "Karo Boyutu",
+    "tileSizeAuto": "Otomatik",
+    "compression": "Sıkıştırma",
+    "customWidth": "Özel Genişlik",
+    "customWidthPlaceholder": "Varsayılan ölçek için boş bırakın",
+    "ttaMode": "TTA Modu (Yüksek Kalite)",
+    "language": "Dil",
+    "loading": "Yükleniyor..."
+  },
+  "modelDialog": {
+    "before": "Öncesi",
+    "after": "Sonrası",
+    "title": "AI Model Seçimi"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Çoğu görsel için ideal."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Çoğu görsel için ideal. Minimal kalite kaybıyla, yüksek hızda ölçeklendirme."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Ticari Değildir)",
+      "description": "Doğal görüntüler için idealdir. Keskinlik ve detay ekler. Ticari kullanım için değildir."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Ticari Değildir)",
+      "description": "Keskinlik ve detay dengesiyle doğal görseller için idealdir."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Ticari Değildir)",
+      "description": "Keskinlik odaklı doğal görseller için idealdir."
+    },
+    "digital-art-4x": {
+      "name": "Dijital Sanat",
+      "description": "Dijital sanat ve illüstrasyonlar için idealdir."
+    },
+    "high-fidelity-4x": {
+      "name": "Yüksek Doğruluk",
+      "description": "Her türden görsel için idealdir, gerçekçi detaylara ve pürüzsüz dokulara odaklanır."
+    }
+  },
+  "uploader": {
+    "dragActive": "Yüklemek için bırakın",
+    "dragPrompt": "Buraya bir görüntü sürükleyin",
+    "selectFile": "veya seçmek için tıklayın · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Maks 50 MB"
+  },
+  "progress": {
+    "uploading": "Yükleniyor...",
+    "processing": "AI büyütme devam ediyor...",
+    "done": "Tamamlandı!",
+    "error": "İşlem başarısız",
+    "stopped": "Durduruldu",
+    "stop": "Durdur"
+  },
+  "result": {
+    "comparison": "Orijinal vs Büyütülmüş",
+    "reset": "Yeniden Başla",
+    "download": "İndir",
+    "original": "← Orijinal",
+    "upscaled": "Büyütülmüş →"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Powiększanie obrazów AI",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Przetwarzanie..."
+  },
+  "settings": {
+    "aiModel": "Model AI",
+    "scale": "Skala",
+    "outputFormat": "Format wyjścia",
+    "advanced": "Zaawansowane",
+    "tileSize": "Rozmiar kafelka",
+    "tileSizeAuto": "Auto",
+    "compression": "Kompresja",
+    "customWidth": "Niestandardowa szerokość",
+    "customWidthPlaceholder": "Puste dla domyślnej skali",
+    "ttaMode": "Tryb TTA (Wyższa jakość)",
+    "language": "Język",
+    "loading": "Ładowanie..."
+  },
+  "modelDialog": {
+    "before": "Przed",
+    "after": "Po",
+    "title": "Wybierz Model AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Nadaje się do większości obrazów."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Nadaje się do większości obrazów. Szybkie skalowanie z minimalną utratą jakości."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Niekomercyjne)",
+      "description": "Dla naturalnych obrazów. Dodano ostrość i szczegółowość. Zakaz użytku komercyjnego."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Niekomercyjne)",
+      "description": "Do naturalnych obrazów z równowagą ostrości i szczegółów."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Niekomercyjne)",
+      "description": "Dla uzyskania naturalnych obrazów, w których priorytetem jest ostrość."
+    },
+    "digital-art-4x": {
+      "name": "Digital Art",
+      "description": "Do sztuki cyfrowej i ilustracji."
+    },
+    "high-fidelity-4x": {
+      "name": "High Fidelity",
+      "description": "Do wszelkiego rodzaju obrazów, w których kładziony jest nacisk na realistyczne detale i gładkie tekstury."
+    }
+  },
+  "uploader": {
+    "dragActive": "Upuść, aby przesłać",
+    "dragPrompt": "Przeciągnij i upuść obraz tutaj",
+    "selectFile": "lub kliknij, aby wybrać · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Maks 50 MB"
+  },
+  "progress": {
+    "uploading": "Przesyłanie...",
+    "processing": "Powiększanie AI w toku...",
+    "done": "Gotowe!",
+    "error": "Przetwarzanie nie powiodło się",
+    "stopped": "Zatrzymano",
+    "stop": "Stop"
+  },
+  "result": {
+    "comparison": "Oryginał vs Powiększony",
+    "reset": "Zacznij od nowa",
+    "download": "Pobierz",
+    "original": "← Oryginał",
+    "upscaled": "Powiększony →"
+  }
+}

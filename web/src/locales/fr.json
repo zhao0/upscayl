@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Agrandisseur d'images IA",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Traitement..."
+  },
+  "settings": {
+    "aiModel": "Modèle IA",
+    "scale": "Échelle",
+    "outputFormat": "Format de sortie",
+    "advanced": "Paramètres avancés",
+    "tileSize": "Taille des tuiles",
+    "tileSizeAuto": "Auto",
+    "compression": "Compression",
+    "customWidth": "Largeur personnalisée",
+    "customWidthPlaceholder": "Vide pour l'échelle par défaut",
+    "ttaMode": "Mode TTA (Haute qualité)",
+    "language": "Langue",
+    "loading": "Chargement..."
+  },
+  "modelDialog": {
+    "before": "Avant",
+    "after": "Après",
+    "title": "Sélectionner le modèle AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Convient à la plupart des images."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Convient à la plupart des images. Suréchantillonnage rapide avec une perte de qualité minimale."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Non-Commercial)",
+      "description": "Pour les images naturelles. Ajoute de la netteté et des détails. Pas d'utilisation commerciale."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Non-Commercial)",
+      "description": "Pour les images naturelles avec un équilibre de netteté et de détails."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Non-Commercial)",
+      "description": "Pour les images naturelles avec un accent sur la netteté."
+    },
+    "digital-art-4x": {
+      "name": "Art numérique",
+      "description": "Pour l'art numérique et les illustrations."
+    },
+    "high-fidelity-4x": {
+      "name": "Haute Fidélité",
+      "description": "Pour tous types d'images avec un accent sur les détails réalistes et les textures lisses."
+    }
+  },
+  "uploader": {
+    "dragActive": "Relâchez pour uploader",
+    "dragPrompt": "Glissez-déposez une image ici",
+    "selectFile": "ou cliquez pour sélectionner · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Max 50 Mo"
+  },
+  "progress": {
+    "uploading": "Upload en cours...",
+    "processing": "Agrandissement IA en cours...",
+    "done": "Terminé !",
+    "error": "Échec du traitement",
+    "stopped": "Arrêté",
+    "stop": "Arrêter"
+  },
+  "result": {
+    "comparison": "Original vs Agrandi",
+    "reset": "Recommencer",
+    "download": "Télécharger",
+    "original": "← Original",
+    "upscaled": "Agrandi →"
+  }
+}

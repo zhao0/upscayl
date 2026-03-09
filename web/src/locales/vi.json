@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Công cụ phóng to ảnh AI",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Đang xử lý..."
+  },
+  "settings": {
+    "aiModel": "Mô hình AI",
+    "scale": "Tỷ lệ",
+    "outputFormat": "Định dạng đầu ra",
+    "advanced": "Cài đặt nâng cao",
+    "tileSize": "Kích thước ô",
+    "tileSizeAuto": "Tự động",
+    "compression": "Nén",
+    "customWidth": "Chiều rộng tùy chỉnh",
+    "customWidthPlaceholder": "Để trống dùng tỷ lệ mặc định",
+    "ttaMode": "Chế độ TTA (Chất lượng cao)",
+    "language": "Ngôn ngữ",
+    "loading": "Đang tải..."
+  },
+  "modelDialog": {
+    "before": "Trước",
+    "after": "Sau",
+    "title": "Chọn Mô hình AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Standard",
+      "description": "Phù hợp với hầu hết các hình ảnh."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Phù hợp với hầu hết các hình ảnh. Tăng cường tốc độ cao với tổn thất chất lượng tối thiểu."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Không thương mại)",
+      "description": "Dành cho hình ảnh tự nhiên. Tăng thêm độ sắc nét và chi tiết. Không sử dụng cho mục đích thương mại."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Không thương mại)",
+      "description": "Dành cho hình ảnh tự nhiên với sự cân bằng giữa độ sắc nét và chi tiết."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Không thương mại)",
+      "description": "Dành cho hình ảnh tự nhiên tập trung vào độ sắc nét."
+    },
+    "digital-art-4x": {
+      "name": "Nghệ thuật Kỹ thuật số",
+      "description": "Dành cho nghệ thuật kỹ thuật số và minh họa."
+    },
+    "high-fidelity-4x": {
+      "name": "Độ trung thực cao",
+      "description": "Dành cho tất cả các loại hình ảnh với sự tập trung vào chi tiết thực tế và kết cấu mượt mà."
+    }
+  },
+  "uploader": {
+    "dragActive": "Thả để tải lên",
+    "dragPrompt": "Kéo và thả hình ảnh vào đây",
+    "selectFile": "hoặc nhấp để chọn · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Tối đa 50 MB"
+  },
+  "progress": {
+    "uploading": "Đang tải lên...",
+    "processing": "AI đang phóng to...",
+    "done": "Hoàn tất!",
+    "error": "Xử lý thất bại",
+    "stopped": "Đã dừng",
+    "stop": "Dừng"
+  },
+  "result": {
+    "comparison": "Gốc vs Phóng to",
+    "reset": "Làm lại",
+    "download": "Tải xuống",
+    "original": "← Gốc",
+    "upscaled": "Phóng to →"
+  }
+}

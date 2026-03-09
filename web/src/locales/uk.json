@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "ШІ збільшення зображень",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Збільшити 🚀",
+    "processing": "Обробка..."
+  },
+  "settings": {
+    "aiModel": "Модель ШІ",
+    "scale": "Масштаб",
+    "outputFormat": "Формат виводу",
+    "advanced": "Розширені налаштування",
+    "tileSize": "Розмір тайлу",
+    "tileSizeAuto": "Авто",
+    "compression": "Стиснення",
+    "customWidth": "Користувацька ширина",
+    "customWidthPlaceholder": "Порожньо для масштабу за замовчуванням",
+    "ttaMode": "Режим TTA (Вища якість)",
+    "language": "Мова",
+    "loading": "Завантаження..."
+  },
+  "modelDialog": {
+    "before": "До",
+    "after": "Після",
+    "title": "Оберіть ШІ модель"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Стандартний",
+      "description": "Підходить для більшості зображень."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Легкий",
+      "description": "Підходить для більшості зображень. Швидке збільшення з мінімальною втратою якості."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Некомерційний)",
+      "description": "Для природних зображень. Додає різкість та деталізацію. Без комерційного використання."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Некомерційний)",
+      "description": "Для природних зображень з балансом різкості та деталізації."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Некомерційний)",
+      "description": "Для природних зображень з акцентом на різкості."
+    },
+    "digital-art-4x": {
+      "name": "Цифрове мистецтво",
+      "description": "Для цифрового мистецтва та ілюстрацій."
+    },
+    "high-fidelity-4x": {
+      "name": "Висока точність",
+      "description": "Для всіх видів зображень з акцентом на реалістичних деталях та плавних текстурах."
+    }
+  },
+  "uploader": {
+    "dragActive": "Відпустіть для завантаження",
+    "dragPrompt": "Перетягніть зображення сюди",
+    "selectFile": "або натисніть для вибору · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Макс 50 МБ"
+  },
+  "progress": {
+    "uploading": "Завантаження...",
+    "processing": "ШІ збільшення...",
+    "done": "Готово!",
+    "error": "Помилка обробки",
+    "stopped": "Зупинено",
+    "stop": "Зупинити"
+  },
+  "result": {
+    "comparison": "Оригінал vs Збільшене",
+    "reset": "Почати знову",
+    "download": "Завантажити",
+    "original": "← Оригінал",
+    "upscaled": "Збільшене →"
+  }
+}

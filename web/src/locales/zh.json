@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "AI 图像增强工具",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "开始放大",
+    "processing": "处理中..."
+  },
+  "settings": {
+    "aiModel": "AI 模型",
+    "scale": "放大倍数",
+    "outputFormat": "输出格式",
+    "advanced": "高级设置",
+    "tileSize": "Tile Size",
+    "tileSizeAuto": "自动",
+    "compression": "压缩率",
+    "customWidth": "自定义宽度",
+    "customWidthPlaceholder": "留空使用默认倍数",
+    "ttaMode": "TTA 模式 (更高质量)",
+    "language": "语言",
+    "loading": "加载中..."
+  },
+  "modelDialog": {
+    "before": "升图前",
+    "after": "升图后",
+    "title": "选择 AI 模型"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl 标准",
+      "description": "适用于大多数图像。"
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl 轻量版",
+      "description": "适用于大多数图像。高速升图，质量损失最小。"
+    },
+    "remacri-4x": {
+      "name": "Remacri（非商业用途）",
+      "description": "适用于自然图像。增加了锐度和细节。不用于商业用途。"
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix（非商业用途）",
+      "description": "适用于自然图像，平衡了锐度和细节。"
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp（非商业用途）",
+      "description": "适用于自然图像，注重锐度。"
+    },
+    "digital-art-4x": {
+      "name": "数字艺术",
+      "description": "适用于数字艺术和插图。"
+    },
+    "high-fidelity-4x": {
+      "name": "高保真",
+      "description": "适用于各种图像，注重真实细节和平滑纹理。"
+    }
+  },
+  "uploader": {
+    "dragActive": "释放以上传图片",
+    "dragPrompt": "拖拽图片到此处",
+    "selectFile": "或点击选择文件 · 支持 PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "最大 50 MB"
+  },
+  "progress": {
+    "uploading": "正在上传...",
+    "processing": "AI 放大处理中...",
+    "done": "处理完成!",
+    "error": "处理失败",
+    "stopped": "已停止",
+    "stop": "停止"
+  },
+  "result": {
+    "comparison": "原图 vs 放大图对比",
+    "reset": "重新开始",
+    "download": "下载结果",
+    "original": "← 原图",
+    "upscaled": "放大后 →"
+  }
+}

@@ -13,10 +13,12 @@ import {
   UpscaleParams,
 } from "./api/client";
 import { Sparkles, Github } from "lucide-react";
+import { useTranslation } from "./i18n";
 
 type AppStatus = "idle" | "uploading" | "processing" | "done" | "error" | "stopped";
 
 export default function App() {
+  const t = useTranslation();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [status, setStatus] = useState<AppStatus>("idle");
@@ -110,9 +112,9 @@ export default function App() {
             <Sparkles size={22} className="text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-bold gradient-text">Upscayl</h1>
+            <h1 className="text-lg font-bold gradient-text">{t("app.title")}</h1>
             <p className="text-[10px] text-base-content/40 tracking-widest uppercase">
-              AI Image Upscaler
+              {t("app.subtitle")}
             </p>
           </div>
         </div>
@@ -142,18 +144,15 @@ export default function App() {
           >
             <Sparkles size={16} />
             {isProcessing
-              ? "处理中..."
-              : "开始放大"}
+              ? t("app.processing")
+              : t("app.startUpscale")}
           </button>
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-3 border-t border-base-content/5 flex items-center justify-between">
-          <span className="text-[10px] text-base-content/30">
-            Upscayl Web v1.0.0
-          </span>
+        <div className="px-5 py-3 border-t border-base-content/5 flex items-center justify-end">
           <a
-            href="https://github.com/upscayl/upscayl"
+            href="https://github.com/zhao0/upscayl"
             target="_blank"
             rel="noopener noreferrer"
             className="text-base-content/30 hover:text-primary transition-colors"

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Upscaler de Imagens IA",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Processando..."
+  },
+  "settings": {
+    "aiModel": "Modelo IA",
+    "scale": "Escala",
+    "outputFormat": "Formato de saída",
+    "advanced": "Configurações avançadas",
+    "tileSize": "Tamanho do bloco",
+    "tileSizeAuto": "Auto",
+    "compression": "Compressão",
+    "customWidth": "Largura personalizada",
+    "customWidthPlaceholder": "Vazio para escala padrão",
+    "ttaMode": "Modo TTA (Maior qualidade)",
+    "language": "Idioma",
+    "loading": "Carregando..."
+  },
+  "modelDialog": {
+    "before": "Antes",
+    "after": "Depois",
+    "title": "Escolha um Modelo de AI"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl Padrão",
+      "description": "Adequado a maioria das imagens."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Adequado a maioria das imagens. Alta velocidade de aprimoramento com mínima perda de qualidade."
+    },
+    "remacri-4x": {
+      "name": "Remacri (Não-comercial)",
+      "description": "Para imagens naturais. Nitidez e detalhes adicionais. Uso comercial proibido."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (Não-comercial)",
+      "description": "Para imagens naturais com equilíbrio entre detalhe e nitidez."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultrasharp (Não-comercial)",
+      "description": "Para imagens naturais com ênfase em nitidez."
+    },
+    "digital-art-4x": {
+      "name": "Arte Digital",
+      "description": "Para ilustrações e arte digital."
+    },
+    "high-fidelity-4x": {
+      "name": "Alta Fidelidade",
+      "description": "Para todos os tipos de imagens com ênfase em detalhes realísticos e texturas suaves."
+    }
+  },
+  "uploader": {
+    "dragActive": "Solte para enviar",
+    "dragPrompt": "Arraste e solte uma imagem aqui",
+    "selectFile": "ou clique para selecionar · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Máx 50 MB"
+  },
+  "progress": {
+    "uploading": "Enviando...",
+    "processing": "Upscaling IA em progresso...",
+    "done": "Concluído!",
+    "error": "Falha no processamento",
+    "stopped": "Parado",
+    "stop": "Parar"
+  },
+  "result": {
+    "comparison": "Original vs Ampliado",
+    "reset": "Recomeçar",
+    "download": "Baixar",
+    "original": "← Original",
+    "upscaled": "Ampliado →"
+  }
+}

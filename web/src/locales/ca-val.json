@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Upscayl",
+    "subtitle": "Augmentador d'imatges IA",
+    "version": "Upscayl Web v1.0.0",
+    "startUpscale": "Upscayl 🚀",
+    "processing": "Processant..."
+  },
+  "settings": {
+    "aiModel": "Model IA",
+    "scale": "Escala",
+    "outputFormat": "Format de sortida",
+    "advanced": "Paràmetres avançats",
+    "tileSize": "Mida del mosaic",
+    "tileSizeAuto": "Auto",
+    "compression": "Compressió",
+    "customWidth": "Amplada personalitzada",
+    "customWidthPlaceholder": "Buit per escala predeterminada",
+    "ttaMode": "Mode TTA (Qualitat superior)",
+    "language": "Llengua",
+    "loading": "Carregant..."
+  },
+  "modelDialog": {
+    "before": "Abans",
+    "after": "Després",
+    "title": "Selecciona model de IA"
+  },
+  "models": {
+    "upscayl-standard-4x": {
+      "name": "Upscayl estàndard",
+      "description": "Adequat per a la majoria de les imatges."
+    },
+    "upscayl-lite-4x": {
+      "name": "Upscayl Lite",
+      "description": "Adequat per a la majoria de les imatges. Augment de velocitat alta amb pèrdua de qualitat mínima."
+    },
+    "remacri-4x": {
+      "name": "Remacri (No comercial)",
+      "description": "Per a imatges naturals. Afig nitidesa i detall. Ús no comercial."
+    },
+    "ultramix-balanced-4x": {
+      "name": "Ultramix (No comercial)",
+      "description": "Per a imatges naturals amb un equilibri de nitidesa i detall."
+    },
+    "ultrasharp-4x": {
+      "name": "Ultranítid (No comercial)",
+      "description": "Per a imatges naturals amb un enfocament en la nitidesa."
+    },
+    "digital-art-4x": {
+      "name": "Art digital",
+      "description": "Per a art digital i il·lustracions."
+    },
+    "high-fidelity-4x": {
+      "name": "Alta fidelitat",
+      "description": "Per a tota mena d'imatges amb un enfocament en detalls realistes i textures suaus."
+    }
+  },
+  "uploader": {
+    "dragActive": "Deixa anar per pujar",
+    "dragPrompt": "Arrossega i deixa anar una imatge aquí",
+    "selectFile": "o fes clic per seleccionar · PNG, JPG, WebP, BMP, TIFF",
+    "maxSize": "Màx 50 MB"
+  },
+  "progress": {
+    "uploading": "Pujant...",
+    "processing": "Augment IA en curs...",
+    "done": "Fet!",
+    "error": "Error en el processament",
+    "stopped": "Aturat",
+    "stop": "Aturar"
+  },
+  "result": {
+    "comparison": "Original vs Augmentat",
+    "reset": "Recomençar",
+    "download": "Descarregar",
+    "original": "← Original",
+    "upscaled": "Augmentat →"
+  }
+}

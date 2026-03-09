@@ -56,3 +56,6 @@ flags.ts
 *.p12
 dockerfileweb/node_modules/
 server/node_modules/
+server/uploads/
+server/outputs/
+web/node_modules/
