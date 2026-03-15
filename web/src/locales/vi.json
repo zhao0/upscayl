@@ -75,5 +75,13 @@
     "download": "Tải xuống",
     "original": "← Gốc",
     "upscaled": "Phóng to →"
+  },
+  "privacy": {
+    "title": "Thông báo quyền riêng tư",
+    "body": "Bảo mật hình ảnh của bạn là ưu tiên hàng đầu. Hãy yên tâm sử dụng dịch vụ:",
+    "point1": "Hình ảnh tải lên chỉ được sử dụng để xử lý và tự động xóa sau khi hoàn tất",
+    "point2": "Chúng tôi không bao giờ lưu trữ, chia sẻ hoặc sử dụng hình ảnh của bạn cho mục đích khác",
+    "point3": "Tất cả dữ liệu truyền tải đều được mã hóa",
+    "confirm": "Đã hiểu"
   }
 }

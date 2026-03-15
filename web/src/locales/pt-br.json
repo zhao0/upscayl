@@ -75,5 +75,13 @@
     "download": "Baixar",
     "original": "← Original",
     "upscaled": "Ampliado →"
+  },
+  "privacy": {
+    "title": "Aviso de privacidade",
+    "body": "A segurança das suas imagens é nossa prioridade. Use este serviço com tranquilidade:",
+    "point1": "As imagens enviadas são usadas apenas para processamento e excluídas automaticamente após a conclusão",
+    "point2": "Nunca armazenamos, compartilhamos ou usamos suas imagens para outros fins",
+    "point3": "Todas as transferências de dados são criptografadas",
+    "confirm": "Entendi"
   }
 }

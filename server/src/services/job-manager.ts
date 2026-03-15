@@ -1,6 +1,7 @@
 import { ChildProcessWithoutNullStreams } from "child_process";
 import { Response } from "express";
 import { v4 as uuidv4 } from "uuid";
+import fs from "fs";
 
 export type JobStatus =
   | "pending"
@@ -29,9 +30,9 @@ export interface Job {
 class JobManager {
   private jobs: Map<string, Job> = new Map();
 
-  /** Periodic cleanup of old jobs (> 1 hour) */
+  /** Periodic cleanup: delete files and jobs older than 5 minutes */
   constructor() {
-    setInterval(() => this.cleanup(), 10 * 60 * 1000);
+    setInterval(() => this.cleanup(), 60 * 1000); // check every minute
   }
 
   createJob(params: {
@@ -109,13 +110,34 @@ class JobManager {
   }
 
   private cleanup(): void {
-    const oneHourAgo = Date.now() - 60 * 60 * 1000;
+    const tenMinutesAgo = Date.now() - 10 * 60 * 1000;
     for (const [id, job] of this.jobs.entries()) {
       if (
-        job.createdAt < oneHourAgo &&
+        job.createdAt < tenMinutesAgo &&
         (job.status === "done" || job.status === "error" || job.status === "stopped")
       ) {
+        // Delete uploaded input file
+        try {
+          if (fs.existsSync(job.inputPath)) {
+            fs.unlinkSync(job.inputPath);
+            console.log(`🗑️ Deleted input file: ${job.inputPath}`);
+          }
+        } catch (err) {
+          console.error(`Failed to delete input file: ${job.inputPath}`, err);
+        }
+
+        // Delete output result file
+        try {
+          if (fs.existsSync(job.outputPath)) {
+            fs.unlinkSync(job.outputPath);
+            console.log(`🗑️ Deleted output file: ${job.outputPath}`);
+          }
+        } catch (err) {
+          console.error(`Failed to delete output file: ${job.outputPath}`, err);
+        }
+
         this.jobs.delete(id);
+        console.log(`🧹 Cleaned up job ${id} (created ${Math.round((Date.now() - job.createdAt) / 1000)}s ago)`);
       }
     }
   }

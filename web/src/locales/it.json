@@ -75,5 +75,13 @@
     "download": "Scarica",
     "original": "← Originale",
     "upscaled": "Ingrandito →"
+  },
+  "privacy": {
+    "title": "Avviso sulla privacy",
+    "body": "La sicurezza delle tue immagini è la nostra priorità. Usa questo servizio con fiducia:",
+    "point1": "Le immagini caricate vengono utilizzate solo per l'elaborazione e eliminate automaticamente al termine",
+    "point2": "Non archiviamo, condividiamo o utilizziamo le tue immagini per altri scopi",
+    "point3": "Tutti i trasferimenti di dati sono crittografati",
+    "confirm": "Ho capito"
   }
 }

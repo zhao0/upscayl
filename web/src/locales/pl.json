@@ -75,5 +75,13 @@
     "download": "Pobierz",
     "original": "← Oryginał",
     "upscaled": "Powiększony →"
+  },
+  "privacy": {
+    "title": "Informacja o prywatności",
+    "body": "Bezpieczeństwo Twoich obrazów jest naszym priorytetem. Korzystaj z tej usługi bez obaw:",
+    "point1": "Przesłane obrazy są używane wyłącznie do przetwarzania i automatycznie usuwane po zakończeniu",
+    "point2": "Nigdy nie przechowujemy, nie udostępniamy ani nie używamy Twoich obrazów w innych celach",
+    "point3": "Wszystkie transfery danych są szyfrowane",
+    "confirm": "Rozumiem"
   }
 }

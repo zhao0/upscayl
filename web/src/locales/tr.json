@@ -75,5 +75,13 @@
     "download": "İndir",
     "original": "← Orijinal",
     "upscaled": "Büyütülmüş →"
+  },
+  "privacy": {
+    "title": "Gizlilik Bildirimi",
+    "body": "Görsel güvenliğiniz en büyük önceliğimizdir. Bu hizmeti güvenle kullanın:",
+    "point1": "Yüklenen görseller yalnızca işleme için kullanılır ve tamamlandıktan sonra otomatik olarak silinir",
+    "point2": "Görsellerinizi asla saklamaz, paylaşmaz veya başka amaçlarla kullanmayız",
+    "point3": "Tüm veri aktarımları şifrelenmiştir",
+    "confirm": "Anladım"
   }
 }

@@ -75,5 +75,13 @@
     "download": "Transferir",
     "original": "← Original",
     "upscaled": "Ampliado →"
+  },
+  "privacy": {
+    "title": "Aviso de privacidade",
+    "body": "A segurança das suas imagens é a nossa prioridade. Utilize este serviço com confiança:",
+    "point1": "As imagens enviadas são utilizadas apenas para processamento e eliminadas automaticamente após a conclusão",
+    "point2": "Nunca armazenamos, partilhamos ou utilizamos as suas imagens para outros fins",
+    "point3": "Todas as transferências de dados são encriptadas",
+    "confirm": "Entendido"
   }
 }

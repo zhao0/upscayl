@@ -75,5 +75,13 @@
     "download": "Muat Turun",
     "original": "← Asal",
     "upscaled": "Dibesarkan →"
+  },
+  "privacy": {
+    "title": "Notis Privasi",
+    "body": "Keselamatan imej anda adalah keutamaan kami. Gunakan perkhidmatan ini dengan yakin:",
+    "point1": "Imej yang dimuat naik hanya digunakan untuk pemprosesan dan dipadam secara automatik selepas siap",
+    "point2": "Kami tidak pernah menyimpan, berkongsi, atau menggunakan imej anda untuk tujuan lain",
+    "point3": "Semua pemindahan data disulitkan",
+    "confirm": "Faham"
   }
 }

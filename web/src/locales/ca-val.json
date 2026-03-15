@@ -75,5 +75,13 @@
     "download": "Descarregar",
     "original": "← Original",
     "upscaled": "Augmentat →"
+  },
+  "privacy": {
+    "title": "Avís de privacitat",
+    "body": "La seguretat de les teues imatges és la nostra prioritat. Utilitza aquest servei amb confiança:",
+    "point1": "Les imatges pujades només s'utilitzen per al processament i s'eliminen automàticament després",
+    "point2": "Mai emmagatzemem, compartim ni utilitzem les teues imatges per a altres finalitats",
+    "point3": "Totes les transferències de dades estan xifrades",
+    "confirm": "Entès"
   }
 }

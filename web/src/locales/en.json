@@ -75,5 +75,13 @@
     "download": "Download",
     "original": "← Original",
     "upscaled": "Upscaled →"
+  },
+  "privacy": {
+    "title": "Privacy Notice",
+    "body": "Your image security is our top priority. Feel free to use this service:",
+    "point1": "Uploaded images are used only for processing and automatically deleted after completion",
+    "point2": "We never store, share, or use your images for any other purpose",
+    "point3": "All data transfers are encrypted",
+    "confirm": "Got it"
   }
 }

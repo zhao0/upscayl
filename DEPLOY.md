@@ -38,9 +38,7 @@ Visit `http://your-server:3001` to use.
 npm install -g pm2
 
 cd server
-pm2 start dist/index.js --name upscayl-web \
-  --env production \
-  -- --PORT=3001
+PORT=3001 NODE_ENV=production pm2 start dist/index.js --name upscayl-web
 
 pm2 save
 pm2 startup    # auto-start on reboot

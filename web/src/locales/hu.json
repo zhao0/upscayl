@@ -75,5 +75,13 @@
     "download": "Letöltés",
     "original": "← Eredeti",
     "upscaled": "Nagyított →"
+  },
+  "privacy": {
+    "title": "Adatvédelmi tájékoztató",
+    "body": "A képeid biztonsága a legfontosabb számunkra. Használd nyugodtan a szolgáltatást:",
+    "point1": "A feltöltött képek csak feldolgozásra kerülnek felhasználásra, és a befejezés után automatikusan törlődnek",
+    "point2": "Soha nem tároljuk, osztjuk meg vagy használjuk a képeidet más célra",
+    "point3": "Minden adatátvitel titkosított",
+    "confirm": "Értem"
   }
 }

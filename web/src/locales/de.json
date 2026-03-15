@@ -75,5 +75,13 @@
     "download": "Herunterladen",
     "original": "← Original",
     "upscaled": "Vergrößert →"
+  },
+  "privacy": {
+    "title": "Datenschutzhinweis",
+    "body": "Die Sicherheit Ihrer Bilder hat höchste Priorität. Nutzen Sie diesen Dienst beruhigt:",
+    "point1": "Hochgeladene Bilder werden nur zur Verarbeitung verwendet und nach Abschluss automatisch gelöscht",
+    "point2": "Wir speichern, teilen oder verwenden Ihre Bilder nicht für andere Zwecke",
+    "point3": "Alle Datenübertragungen sind verschlüsselt",
+    "confirm": "Verstanden"
   }
 }

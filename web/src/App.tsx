@@ -3,6 +3,7 @@ import ImageUploader from "./components/ImageUploader";
 import SettingsPanel from "./components/SettingsPanel";
 import ProgressDisplay from "./components/ProgressDisplay";
 import ResultViewer from "./components/ResultViewer";
+import PrivacyNotice from "./components/PrivacyNotice";
 import {
   uploadAndUpscale,
   subscribeProgress,
@@ -104,6 +105,7 @@ export default function App() {
 
   return (
     <div className="flex h-screen w-screen bg-base-100">
+      <PrivacyNotice />
       {/* Sidebar */}
       <aside className="w-[340px] shrink-0 h-full flex flex-col border-r border-base-content/5 bg-base-200/30">
         {/* Logo */}

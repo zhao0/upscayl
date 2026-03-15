@@ -75,5 +75,13 @@
     "download": "Unduh",
     "original": "← Asli",
     "upscaled": "Diperbesar →"
+  },
+  "privacy": {
+    "title": "Pemberitahuan Privasi",
+    "body": "Keamanan gambar Anda adalah prioritas utama kami. Gunakan layanan ini dengan tenang:",
+    "point1": "Gambar yang diunggah hanya digunakan untuk pemrosesan dan otomatis dihapus setelah selesai",
+    "point2": "Kami tidak pernah menyimpan, membagikan, atau menggunakan gambar Anda untuk tujuan lain",
+    "point3": "Semua transfer data dienkripsi",
+    "confirm": "Mengerti"
   }
 }

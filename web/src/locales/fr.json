@@ -75,5 +75,13 @@
     "download": "Télécharger",
     "original": "← Original",
     "upscaled": "Agrandi →"
+  },
+  "privacy": {
+    "title": "Avis de confidentialité",
+    "body": "La sécurité de vos images est notre priorité. Utilisez ce service en toute confiance :",
+    "point1": "Les images téléchargées sont utilisées uniquement pour le traitement et automatiquement supprimées après",
+    "point2": "Nous ne stockons, ne partageons ni n'utilisons vos images à d'autres fins",
+    "point3": "Tous les transferts de données sont chiffrés",
+    "confirm": "Compris"
   }
 }
