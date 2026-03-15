@@ -74,8 +74,6 @@ app.use(
 
 app.listen(PORT, () => {
   console.log(`🚀 Upscayl Web Server running on http://localhost:${PORT}`);
-  console.log(`📁 Uploads dir: ${path.resolve(__dirname, "../uploads")}`);
-  console.log(`📁 Outputs dir: ${path.resolve(__dirname, "../outputs")}`);
 });
 
 export default app;
