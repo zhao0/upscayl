@@ -1,3 +1,10 @@
+import { webcrypto } from "crypto";
+
+// Polyfill globalThis.crypto for altcha-lib (requires Web Crypto API)
+if (!(globalThis as any).crypto) {
+  (globalThis as any).crypto = webcrypto;
+}
+
 import express from "express";
 import cors from "cors";
 import path from "path";
