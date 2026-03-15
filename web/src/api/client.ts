@@ -48,7 +48,7 @@ export async function uploadAndUpscale(
   if (params.ttaMode) formData.append("ttaMode", "true");
   if (params.altcha) formData.append("altcha", params.altcha);
 
-  const response = await fetch(`${API_BASE}/upscale`, {
+  const response = await fetch(`${API_BASE}/upscale/`, {
     method: "POST",
     body: formData,
   });
