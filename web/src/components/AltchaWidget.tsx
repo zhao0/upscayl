@@ -39,7 +39,7 @@ export default function AltchaWidget({
   }, []);
 
   return (
-    <div style={{ display: "none" }}>
+    <div style={{ position: "absolute", opacity: 0, pointerEvents: "none", height: 0, overflow: "hidden" }}>
       {/* @ts-ignore — altcha-widget is a web component registered by 'altcha' */}
       <altcha-widget
         ref={widgetRef}
