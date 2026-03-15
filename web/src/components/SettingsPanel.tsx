@@ -2,18 +2,23 @@ import { useEffect, useState } from "react";
 import { getModels, ModelInfo, UpscaleParams } from "../api/client";
 import { Settings, Zap, Layers, Maximize2, Globe } from "lucide-react";
 import SelectModelDialog from "./SelectModelDialog";
+import AltchaWidget from "./AltchaWidget";
 import { useTranslation, useLocale, LOCALE_LABELS, Locale } from "../i18n";
 
 interface SettingsPanelProps {
   params: UpscaleParams;
   onChange: (params: UpscaleParams) => void;
   disabled?: boolean;
+  onAltchaVerified?: (payload: string) => void;
+  onAltchaReset?: () => void;
 }
 
 export default function SettingsPanel({
   params,
   onChange,
   disabled,
+  onAltchaVerified,
+  onAltchaReset,
 }: SettingsPanelProps) {
   const t = useTranslation();
   const { locale, setLocale } = useLocale();
@@ -210,6 +215,16 @@ export default function SettingsPanel({
           </div>
         </div>
       </div>
+
+      {/* ALTCHA Verification */}
+      {onAltchaVerified && (
+        <div className="mt-2">
+          <AltchaWidget
+            onVerified={onAltchaVerified}
+            onReset={onAltchaReset}
+          />
+        </div>
+      )}
     </div>
   );
 }

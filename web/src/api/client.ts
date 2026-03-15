@@ -28,6 +28,7 @@ export interface UpscaleParams {
   tileSize?: number;
   customWidth?: string;
   ttaMode?: boolean;
+  altcha?: string;
 }
 
 /** Upload an image and start upscaling */
@@ -45,6 +46,7 @@ export async function uploadAndUpscale(
   if (params.tileSize) formData.append("tileSize", params.tileSize.toString());
   if (params.customWidth) formData.append("customWidth", params.customWidth);
   if (params.ttaMode) formData.append("ttaMode", "true");
+  if (params.altcha) formData.append("altcha", params.altcha);
 
   const response = await fetch(`${API_BASE}/upscale`, {
     method: "POST",

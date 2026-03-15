@@ -2,12 +2,14 @@ import { Router, Request, Response } from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import { verifySolution } from "altcha-lib";
 import { jobManager } from "../services/job-manager";
 import {
   startUpscale,
   UpscaleOptions,
   ImageFormat,
 } from "../services/upscale-service";
+import { HMAC_KEY } from "./altcha";
 
 const router = Router();
 
@@ -58,8 +60,20 @@ const upload = multer({
  *   - customWidth?: string
  *   - ttaMode?: boolean
  */
-router.post("/", upload.single("image"), (req: Request, res: Response) => {
+router.post("/", upload.single("image"), async (req: Request, res: Response) => {
   try {
+    // Verify ALTCHA proof-of-work
+    const altchaPayload = req.body.altcha;
+    if (!altchaPayload) {
+      res.status(403).json({ error: "ALTCHA verification required" });
+      return;
+    }
+    const verified = await verifySolution(altchaPayload, HMAC_KEY);
+    if (!verified) {
+      res.status(403).json({ error: "ALTCHA verification failed" });
+      return;
+    }
+
     if (!req.file) {
       res.status(400).json({ error: "No image file uploaded" });
       return;

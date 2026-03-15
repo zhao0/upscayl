@@ -26,6 +26,7 @@ export default function App() {
   const [progress, setProgress] = useState("");
   const [error, setError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
+  const [altchaPayload, setAltchaPayload] = useState<string | null>(null);
   const [params, setParams] = useState<UpscaleParams>({
     model: "upscayl-standard-4x",
     scale: "4",
@@ -60,7 +61,10 @@ export default function App() {
       setProgress("");
       setError("");
 
-      const response = await uploadAndUpscale(selectedFile, params);
+      const response = await uploadAndUpscale(selectedFile, {
+        ...params,
+        altcha: altchaPayload || undefined,
+      });
       setJobId(response.jobId);
       setStatus("processing");
 
@@ -88,7 +92,7 @@ export default function App() {
       setStatus("error");
       setError(err.message);
     }
-  }, [selectedFile, params]);
+  }, [selectedFile, params, altchaPayload]);
 
   const handleStop = useCallback(async () => {
     if (jobId) {
@@ -127,6 +131,8 @@ export default function App() {
             params={params}
             onChange={setParams}
             disabled={isProcessing}
+            onAltchaVerified={setAltchaPayload}
+            onAltchaReset={() => setAltchaPayload(null)}
           />
         </div>
 
@@ -142,7 +148,7 @@ export default function App() {
           <button
             className="btn btn-primary w-full gap-2 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300"
             onClick={handleUpscale}
-            disabled={!selectedFile || isProcessing}
+            disabled={!selectedFile || isProcessing || !altchaPayload}
           >
             <Sparkles size={16} />
             {isProcessing

@@ -83,16 +83,3 @@ server {
 | `NODE_ENV` | Set to `production` to enable static file serving | — |
 | `FRONTEND_URL` | CORS origin (only needed in non-production mode) | `http://localhost:5173` |
 
-## GPU Requirements
-
-upscayl-bin requires Vulkan support:
-
-```bash
-# Ubuntu/Debian
-sudo apt install vulkan-tools mesa-vulkan-drivers
-
-# Verify GPU availability
-vulkaninfo | head -20
-```
-
-Without a GPU with Vulkan support, upscayl-bin will not run.
