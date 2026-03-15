@@ -82,4 +82,6 @@ server {
 | `PORT` | Server port | `3001` |
 | `NODE_ENV` | Set to `production` to enable static file serving | — |
 | `FRONTEND_URL` | CORS origin (only needed in non-production mode) | `http://localhost:5173` |
+| `ALTCHA_HMAC_KEY` | Secret key for signing ALTCHA challenges. **Change for production!** | `upscayl-altcha-dev-key...` |
+| `ALTCHA_MAX_NUMBER` | Max PoW computation iterations (lower = faster validation) | `50000` |
 

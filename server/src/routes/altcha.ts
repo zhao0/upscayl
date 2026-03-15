@@ -4,6 +4,7 @@ import { createChallenge } from "altcha-lib";
 const router = Router();
 
 const HMAC_KEY = process.env.ALTCHA_HMAC_KEY || "upscayl-altcha-dev-key-change-in-prod";
+const MAX_NUMBER = parseInt(process.env.ALTCHA_MAX_NUMBER || "50000", 10);
 
 /**
  * GET /api/altcha/challenge
@@ -13,7 +14,7 @@ router.get("/challenge", async (_req: Request, res: Response) => {
   try {
     const challenge = await createChallenge({
       hmacKey: HMAC_KEY,
-      maxNumber: 100_000,
+      maxNumber: MAX_NUMBER,
     });
     res.json(challenge);
   } catch (error: any) {
