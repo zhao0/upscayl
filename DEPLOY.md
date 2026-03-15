@@ -63,8 +63,8 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 
-    # Disable buffering for SSE progress events
-    location /api/upscale/ {
+    # Disable buffering for SSE progress events (and handle POST uploads)
+    location /api/upscale {
         proxy_pass http://127.0.0.1:3001;
         proxy_buffering off;
         proxy_cache off;
