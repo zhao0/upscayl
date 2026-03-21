@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import ImageUploader from "./components/ImageUploader";
 import SettingsPanel from "./components/SettingsPanel";
 import ProgressDisplay from "./components/ProgressDisplay";
@@ -33,6 +33,38 @@ export default function App() {
     saveImageAs: "png",
     compression: "0",
   });
+
+  // Use refs to track latest values for event handlers
+  const statusRef = useRef(status);
+  const jobIdRef = useRef(jobId);
+  statusRef.current = status;
+  jobIdRef.current = jobId;
+
+  // Warn before leaving when a task is in progress; stop job on leave
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (statusRef.current === "uploading" || statusRef.current === "processing") {
+        e.preventDefault();
+      }
+    };
+
+    const handlePageHide = () => {
+      if (
+        (statusRef.current === "uploading" || statusRef.current === "processing") &&
+        jobIdRef.current
+      ) {
+        // Use sendBeacon for reliability during page unload
+        navigator.sendBeacon(`/api/upscale/${jobIdRef.current}/stop`);
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("pagehide", handlePageHide);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("pagehide", handlePageHide);
+    };
+  }, []);
 
   const handleFileSelect = useCallback((file: File) => {
     setSelectedFile(file);
