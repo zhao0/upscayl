@@ -2,6 +2,7 @@ import { spawn } from "child_process";
 import path from "path";
 import fs from "fs";
 import { jobManager, Job } from "./job-manager";
+import { logger } from "../utils/logger";
 
 /** Detect OS and resolve binary path */
 function getExecPath(): string {
@@ -102,8 +103,8 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
   const execPath = getExecPath();
   const args = buildArgs(job.inputPath, job.outputPath, options);
 
-  console.log(`🚀 Starting upscale job ${job.id}`);
-  console.log(`📢 Command: ${execPath} ${args.join(" ")}`);
+  logger.log(`🚀 Starting upscale job ${job.id}`);
+  logger.log(`📢 Command: ${execPath} ${args.join(" ")}`);
 
   const child = spawn(execPath, args, {
     cwd: undefined,
@@ -122,7 +123,7 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
 
   child.stderr.on("data", (data: Buffer) => {
     const text = data.toString().trim();
-    console.log(`[Job ${job.id}] stderr: ${text}`);
+    logger.log(`[Job ${job.id}] stderr: ${text}`);
 
     if (text.includes("Error") || text.includes("failed")) {
       failed = true;
@@ -141,11 +142,11 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
 
   child.stdout.on("data", (data: Buffer) => {
     const text = data.toString().trim();
-    console.log(`[Job ${job.id}] stdout: ${text}`);
+    logger.log(`[Job ${job.id}] stdout: ${text}`);
   });
 
   child.on("error", (err) => {
-    console.error(`[Job ${job.id}] Process error:`, err);
+    logger.error(`[Job ${job.id}] Process error:`, err);
     failed = true;
     jobManager.updateJob(job.id, {
       status: "error",
@@ -157,7 +158,7 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
   child.on("close", (code) => {
     const currentJob = jobManager.getJob(job.id);
     if (!failed && currentJob?.status !== "stopped") {
-      console.log(`✅ Job ${job.id} completed`);
+      logger.log(`✅ Job ${job.id} completed`);
       jobManager.updateJob(job.id, { status: "done", progress: "100%" });
       jobManager.broadcastProgress(job.id, "done", job.id);
     }

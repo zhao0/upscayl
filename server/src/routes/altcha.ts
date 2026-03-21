@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { createChallenge } from "altcha-lib";
+import { logger } from "../utils/logger";
 
 const router = Router();
 
@@ -18,7 +19,7 @@ router.get("/challenge", async (_req: Request, res: Response) => {
     });
     res.json(challenge);
   } catch (error: any) {
-    console.error("Failed to create ALTCHA challenge:", error);
+    logger.error("Failed to create ALTCHA challenge:", error);
     res.status(500).json({ error: "Failed to create challenge" });
   }
 });

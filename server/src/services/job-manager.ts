@@ -2,6 +2,7 @@ import { ChildProcessWithoutNullStreams } from "child_process";
 import { Response } from "express";
 import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
+import { logger } from "../utils/logger";
 
 export type JobStatus =
   | "pending"
@@ -120,24 +121,24 @@ class JobManager {
         try {
           if (fs.existsSync(job.inputPath)) {
             fs.unlinkSync(job.inputPath);
-            console.log(`🗑️ Deleted input file: ${job.inputPath}`);
+            logger.log(`🗑️ Deleted input file: ${job.inputPath}`);
           }
         } catch (err) {
-          console.error(`Failed to delete input file: ${job.inputPath}`, err);
+          logger.error(`Failed to delete input file: ${job.inputPath}`, err);
         }
 
         // Delete output result file
         try {
           if (fs.existsSync(job.outputPath)) {
             fs.unlinkSync(job.outputPath);
-            console.log(`🗑️ Deleted output file: ${job.outputPath}`);
+            logger.log(`🗑️ Deleted output file: ${job.outputPath}`);
           }
         } catch (err) {
-          console.error(`Failed to delete output file: ${job.outputPath}`, err);
+          logger.error(`Failed to delete output file: ${job.outputPath}`, err);
         }
 
         this.jobs.delete(id);
-        console.log(`🧹 Cleaned up job ${id} (created ${Math.round((Date.now() - job.createdAt) / 1000)}s ago)`);
+        logger.log(`🧹 Cleaned up job ${id} (created ${Math.round((Date.now() - job.createdAt) / 1000)}s ago)`);
       }
     }
   }

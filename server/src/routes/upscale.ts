@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { logger } from "../utils/logger";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
@@ -122,7 +123,7 @@ router.post("/", upload.single("image"), async (req: Request, res: Response) => 
       message: "Upscaling started",
     });
   } catch (error: any) {
-    console.error("Upload error:", error);
+    logger.error("Upload error:", error);
     res.status(500).json({ error: error.message });
   }
 });

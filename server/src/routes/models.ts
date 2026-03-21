@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { logger } from "../utils/logger";
 import { listModels } from "../services/upscale-service";
 
 const router = Router();
@@ -12,7 +13,7 @@ router.get("/", (_req: Request, res: Response) => {
     const models = listModels();
     res.json({ models });
   } catch (error: any) {
-    console.error("Error listing models:", error);
+    logger.error("Error listing models:", error);
     res.status(500).json({ error: error.message });
   }
 });

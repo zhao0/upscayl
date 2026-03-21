@@ -6,6 +6,7 @@ if (!(globalThis as any).crypto) {
 }
 
 import express from "express";
+import { logger } from "./utils/logger";
 import cors from "cors";
 import path from "path";
 import fs from "fs";
@@ -67,13 +68,13 @@ app.use(
     res: express.Response,
     _next: express.NextFunction
   ) => {
-    console.error("Unhandled error:", err);
+    logger.error("Unhandled error:", err);
     res.status(500).json({ error: err.message || "Internal server error" });
   }
 );
 
 app.listen(PORT, () => {
-  console.log(`🚀 Upscayl Web Server running on http://localhost:${PORT}`);
+  logger.log(`🚀 Upscayl Web Server running on http://localhost:${PORT}`);
 });
 
 export default app;
