@@ -3,6 +3,7 @@ import path from "path";
 import fs from "fs";
 import { jobManager, Job } from "./job-manager";
 import { logger } from "../utils/logger";
+import { sendBarkNotification } from "../utils/bark";
 
 /** Detect OS and resolve binary path */
 function getExecPath(): string {
@@ -133,6 +134,7 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
         error: text,
       });
       jobManager.broadcastProgress(job.id, "error", text);
+      sendBarkNotification("Upscayl Job Failed", `Job ${job.id} error: ${text}`);
     } else {
       // Parse progress percentage
       jobManager.updateJob(job.id, { progress: text });
@@ -161,6 +163,7 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
       logger.log(`✅ Job ${job.id} completed`);
       jobManager.updateJob(job.id, { status: "done", progress: "100%" });
       jobManager.broadcastProgress(job.id, "done", job.id);
+      sendBarkNotification("Upscayl Job Done ✅", `Job ${job.id} completed`);
     }
   });
 }
