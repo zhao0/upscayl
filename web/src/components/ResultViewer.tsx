@@ -36,6 +36,14 @@ export default function ResultViewer({
             {t("result.reset")}
           </button>
           <a
+            href="https://paypal.me/zhao0"
+            target="_blank"
+            className="btn btn-primary btn-sm gap-1 shadow-lg shadow-primary/25"
+          >
+            <Download size={14} />
+            {t("result.donate")}
+          </a>
+          <a
             href={downloadUrl}
             download
             className="btn btn-primary btn-sm gap-1 shadow-lg shadow-primary/25"
