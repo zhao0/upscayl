@@ -2,7 +2,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import { Download, ZoomIn, RotateCcw } from "lucide-react";
+import { Coffee, Download, ZoomIn, RotateCcw } from "lucide-react";
 import { useTranslation } from "../i18n";
 
 interface ResultViewerProps {
@@ -40,7 +40,7 @@ export default function ResultViewer({
             target="_blank"
             className="btn btn-primary btn-sm gap-1 shadow-lg shadow-primary/25"
           >
-            <Download size={14} />
+            <Coffee size={14} />
             {t("result.donate")}
           </a>
           <a
