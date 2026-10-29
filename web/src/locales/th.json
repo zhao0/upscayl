@@ -4,7 +4,8 @@
     "subtitle": "เครื่องมือขยายภาพ AI",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "กำลังประมวลผล..."
+    "processing": "กำลังประมวลผล...",
+    "totalProcessed": "รูปภาพที่ประมวลผลแล้ว"
   },
   "settings": {
     "aiModel": "โมเดล AI",

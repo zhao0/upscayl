@@ -4,7 +4,8 @@
     "subtitle": "Pembesar Imej AI",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Memproses..."
+    "processing": "Memproses...",
+    "totalProcessed": "Imej diproses"
   },
   "settings": {
     "aiModel": "Model AI",

@@ -4,7 +4,8 @@
     "subtitle": "Công cụ phóng to ảnh AI",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Đang xử lý..."
+    "processing": "Đang xử lý...",
+    "totalProcessed": "Ảnh đã xử lý"
   },
   "settings": {
     "aiModel": "Mô hình AI",

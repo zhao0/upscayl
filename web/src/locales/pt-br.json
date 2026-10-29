@@ -4,7 +4,8 @@
     "subtitle": "Upscaler de Imagens IA",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Processando..."
+    "processing": "Processando...",
+    "totalProcessed": "Imagens processadas"
   },
   "settings": {
     "aiModel": "Modelo IA",

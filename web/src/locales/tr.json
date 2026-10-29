@@ -4,7 +4,8 @@
     "subtitle": "AI Görüntü Büyütücü",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "İşleniyor..."
+    "processing": "İşleniyor...",
+    "totalProcessed": "İşlenen görseller"
   },
   "settings": {
     "aiModel": "AI Model",

@@ -4,7 +4,8 @@
     "subtitle": "ИИ увеличение изображений",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Увеличить 🚀",
-    "processing": "Обработка..."
+    "processing": "Обработка...",
+    "totalProcessed": "Обработано изображений"
   },
   "settings": {
     "aiModel": "Модель ИИ",

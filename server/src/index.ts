@@ -13,6 +13,7 @@ import fs from "fs";
 import upscaleRoutes from "./routes/upscale";
 import modelsRoutes from "./routes/models";
 import altchaRoutes from "./routes/altcha";
+import statsRoutes from "./routes/stats";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -42,6 +43,7 @@ app.use(
 app.use("/api/upscale", upscaleRoutes);
 app.use("/api/models", modelsRoutes);
 app.use("/api/altcha", altchaRoutes);
+app.use("/api/stats", statsRoutes);
 
 // Health check
 app.get("/api/health", (_req, res) => {

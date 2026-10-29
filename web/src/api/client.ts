@@ -19,6 +19,11 @@ export interface ModelInfo {
   description: string;
 }
 
+export interface Stats {
+  totalProcessed: number;
+  updatedAt: string;
+}
+
 export interface UpscaleParams {
   model: string;
   scale: string;
@@ -128,6 +133,13 @@ export function getResultDownloadUrl(jobId: string): string {
 /** Stop a running job */
 export async function stopJob(jobId: string): Promise<void> {
   await fetch(`${API_BASE}/upscale/${jobId}/stop`, { method: "POST" });
+}
+
+/** Get cumulative processing stats */
+export async function getStats(): Promise<Stats> {
+  const response = await fetch(`${API_BASE}/stats`);
+  if (!response.ok) throw new Error("Failed to fetch stats");
+  return response.json();
 }
 
 /** Get list of available models */

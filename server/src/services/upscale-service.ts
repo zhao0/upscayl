@@ -4,6 +4,7 @@ import fs from "fs";
 import { jobManager, Job } from "./job-manager";
 import { logger } from "../utils/logger";
 import { sendBarkNotification } from "../utils/bark";
+import { incrementProcessed } from "./stats";
 
 /** Detect OS and resolve binary path */
 function getExecPath(): string {
@@ -163,6 +164,8 @@ export function startUpscale(job: Job, options: UpscaleOptions): void {
       logger.log(`✅ Job ${job.id} completed`);
       jobManager.updateJob(job.id, { status: "done", progress: "100%" });
       jobManager.broadcastProgress(job.id, "done", job.id);
+      const { totalProcessed } = incrementProcessed();
+      logger.log(`📊 Total images processed: ${totalProcessed}`);
       sendBarkNotification("Upscayl Job Done ✅", `Job ${job.id} completed`);
     }
   });

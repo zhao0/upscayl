@@ -4,7 +4,8 @@
     "subtitle": "Powiększanie obrazów AI",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Przetwarzanie..."
+    "processing": "Przetwarzanie...",
+    "totalProcessed": "Przetworzone obrazy"
   },
   "settings": {
     "aiModel": "Model AI",

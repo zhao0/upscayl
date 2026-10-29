@@ -4,7 +4,8 @@
     "subtitle": "AI Képnagyító",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Feldolgozás..."
+    "processing": "Feldolgozás...",
+    "totalProcessed": "Feldolgozott képek"
   },
   "settings": {
     "aiModel": "AI Modell",

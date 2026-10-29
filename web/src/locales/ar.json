@@ -4,7 +4,8 @@
     "subtitle": "أداة تكبير الصور بالذكاء الاصطناعي",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "جاري المعالجة..."
+    "processing": "جاري المعالجة...",
+    "totalProcessed": "الصور المعالجة"
   },
   "settings": {
     "aiModel": "نموذج AI",

@@ -4,7 +4,8 @@
     "subtitle": "AI 画像アップスケーラー",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "アップスケール開始",
-    "processing": "処理中..."
+    "processing": "処理中...",
+    "totalProcessed": "処理済み画像"
   },
   "settings": {
     "aiModel": "AI モデル",

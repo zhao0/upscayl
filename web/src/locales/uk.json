@@ -4,7 +4,8 @@
     "subtitle": "ШІ збільшення зображень",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Збільшити 🚀",
-    "processing": "Обробка..."
+    "processing": "Обробка...",
+    "totalProcessed": "Оброблено зображень"
   },
   "settings": {
     "aiModel": "Модель ШІ",

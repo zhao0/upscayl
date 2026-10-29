@@ -4,7 +4,8 @@
     "subtitle": "Ingranditore immagini IA",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Elaborazione..."
+    "processing": "Elaborazione...",
+    "totalProcessed": "Immagini elaborate"
   },
   "settings": {
     "aiModel": "Modello IA",

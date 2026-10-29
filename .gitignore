@@ -58,4 +58,7 @@ dockerfileweb/node_modules/
 server/node_modules/
 server/uploads/
 server/outputs/
+server/data/
+server/dist/
+web/dist/
 web/node_modules/

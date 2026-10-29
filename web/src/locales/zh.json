@@ -4,7 +4,8 @@
     "subtitle": "AI 图像增强工具",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "开始放大",
-    "processing": "处理中..."
+    "processing": "处理中...",
+    "totalProcessed": "已处理图片"
   },
   "settings": {
     "aiModel": "AI 模型",

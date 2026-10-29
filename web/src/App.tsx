@@ -11,9 +11,10 @@ import {
   getResultPreviewUrl,
   getOriginalPreviewUrl,
   getResultDownloadUrl,
+  getStats,
   UpscaleParams,
 } from "./api/client";
-import { Sparkles, Github } from "lucide-react";
+import { Sparkles, Github, Images } from "lucide-react";
 import { useTranslation } from "./i18n";
 
 type AppStatus = "idle" | "uploading" | "processing" | "done" | "error" | "stopped";
@@ -27,6 +28,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [jobId, setJobId] = useState<string | null>(null);
   const [altchaPayload, setAltchaPayload] = useState<string | null>(null);
+  const [totalProcessed, setTotalProcessed] = useState<number | null>(null);
   const [params, setParams] = useState<UpscaleParams>({
     model: "upscayl-standard-4x",
     scale: "4",
@@ -65,6 +67,17 @@ export default function App() {
       window.removeEventListener("pagehide", handlePageHide);
     };
   }, []);
+
+  // Cumulative counter of images processed by the server
+  const refreshStats = useCallback(() => {
+    getStats()
+      .then((stats) => setTotalProcessed(stats.totalProcessed))
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    refreshStats();
+  }, [refreshStats]);
 
   const handleFileSelect = useCallback((file: File) => {
     setSelectedFile(file);
@@ -108,6 +121,7 @@ export default function App() {
         onDone: () => {
           setStatus("done");
           setProgress("100%");
+          refreshStats();
         },
         onError: (err) => {
           setStatus("error");
@@ -117,6 +131,7 @@ export default function App() {
           if (statusData.status === "done") {
             setStatus("done");
             setProgress("100%");
+            refreshStats();
           }
         },
       });
@@ -124,7 +139,7 @@ export default function App() {
       setStatus("error");
       setError(err.message);
     }
-  }, [selectedFile, params, altchaPayload]);
+  }, [selectedFile, params, altchaPayload, refreshStats]);
 
   const handleStop = useCallback(async () => {
     if (jobId) {
@@ -190,7 +205,18 @@ export default function App() {
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-3 border-t border-base-content/5 flex items-center justify-end">
+        <div className="px-5 py-3 border-t border-base-content/5 flex items-center justify-between gap-2">
+          {totalProcessed !== null ? (
+            <div className="flex items-center gap-1.5 text-[11px] text-base-content/40">
+              <Images size={12} className="text-primary/60" />
+              <span>{t("app.totalProcessed")}</span>
+              <span className="font-semibold tabular-nums text-base-content/60">
+                {totalProcessed.toLocaleString()}
+              </span>
+            </div>
+          ) : (
+            <span />
+          )}
           <a
             href="https://github.com/zhao0/upscayl"
             target="_blank"

@@ -4,7 +4,8 @@
     "subtitle": "KI-Bildvergrößerer",
     "version": "Upscayl Web v1.0.0",
     "startUpscale": "Upscayl 🚀",
-    "processing": "Verarbeitung..."
+    "processing": "Verarbeitung...",
+    "totalProcessed": "Verarbeitete Bilder"
   },
   "settings": {
     "aiModel": "KI-Modell",
