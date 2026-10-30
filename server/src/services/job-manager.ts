@@ -21,6 +21,7 @@ export interface Job {
   scale: string;
   error?: string;
   createdAt: number;
+  finishedAt?: number;
   process?: {
     child: ChildProcessWithoutNullStreams;
     kill: () => boolean;
@@ -31,7 +32,7 @@ export interface Job {
 class JobManager {
   private jobs: Map<string, Job> = new Map();
 
-  /** Periodic cleanup: delete files and jobs older than 5 minutes */
+  /** Periodic cleanup: delete files and jobs 10 minutes after completion */
   constructor() {
     setInterval(() => this.cleanup(), 60 * 1000); // check every minute
   }
@@ -64,7 +65,11 @@ class JobManager {
   updateJob(id: string, updates: Partial<Job>): void {
     const job = this.jobs.get(id);
     if (job) {
-      Object.assign(job, updates);
+      const isFinishing =
+        updates.status &&
+        ["done", "error", "stopped"].includes(updates.status) &&
+        !["done", "error", "stopped"].includes(job.status);
+      Object.assign(job, updates, isFinishing ? { finishedAt: Date.now() } : {});
     }
   }
 
@@ -95,7 +100,7 @@ class JobManager {
     const job = this.jobs.get(id);
     if (job && job.process) {
       job.process.kill();
-      job.status = "stopped";
+      this.updateJob(id, { status: "stopped" });
       this.broadcastProgress(id, "stopped", "Job stopped by user");
       return true;
     }
@@ -114,7 +119,8 @@ class JobManager {
     const tenMinutesAgo = Date.now() - 10 * 60 * 1000;
     for (const [id, job] of this.jobs.entries()) {
       if (
-        job.createdAt < tenMinutesAgo &&
+        job.finishedAt !== undefined &&
+        job.finishedAt < tenMinutesAgo &&
         (job.status === "done" || job.status === "error" || job.status === "stopped")
       ) {
         // Delete uploaded input file
