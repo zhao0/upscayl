@@ -1,9 +1,9 @@
 export const MODELS = {
-  "upscayl-standard-4x": {
-    id: "upscayl-standard-4x",
-  },
   "upscayl-lite-4x": {
     id: "upscayl-lite-4x",
+  },
+  "upscayl-standard-4x": {
+    id: "upscayl-standard-4x",
   },
   "high-fidelity-4x": {
     id: "high-fidelity-4x",

@@ -10,7 +10,7 @@ export const customModelsPathAtom = atomWithStorage<string | null>(
 
 export const selectedModelIdAtom = atomWithStorage<ModelId | string>(
   "selectedModelId",
-  "upscayl-standard-4x",
+  "upscayl-lite-4x",
 );
 export const doubleUpscaylAtom = atomWithStorage("doubleUpscayl", false);
 export const gpuIdAtom = atomWithStorage("gpuId", "");

@@ -219,7 +219,12 @@ export function listModels(): { id: string; name: string; description: string }[
     modelNames.add(baseName);
   });
 
-  return Array.from(modelNames).map((name) => ({
+  const preferredModel = "upscayl-lite-4x";
+  const orderedModels = [...modelNames].sort(
+    (a, b) => Number(b === preferredModel) - Number(a === preferredModel),
+  );
+
+  return orderedModels.map((name) => ({
     id: name,
     name: MODEL_META[name]?.name || name,
     description: MODEL_META[name]?.description || "",

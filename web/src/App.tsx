@@ -30,7 +30,7 @@ export default function App() {
   const [altchaPayload, setAltchaPayload] = useState<string | null>(null);
   const [totalProcessed, setTotalProcessed] = useState<number | null>(null);
   const [params, setParams] = useState<UpscaleParams>({
-    model: "upscayl-standard-4x",
+    model: "upscayl-lite-4x",
     scale: "4",
     saveImageAs: "png",
     compression: "0",

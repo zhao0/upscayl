@@ -81,7 +81,7 @@ router.post("/", upload.single("image"), async (req: Request, res: Response) => 
     }
 
     const {
-      model = "upscayl-standard-4x",
+      model = "upscayl-lite-4x",
       scale = "4",
       saveImageAs = "png",
       gpuId,
