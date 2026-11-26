@@ -2,7 +2,12 @@ import { ChildProcessWithoutNullStreams } from "child_process";
 import { Response } from "express";
 import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
+import path from "path";
 import { logger } from "../utils/logger";
+
+const UPLOADS_DIR = path.resolve(__dirname, "../../uploads");
+const OUTPUTS_DIR = path.resolve(__dirname, "../../outputs");
+const ORPHAN_MAX_AGE_MS = 15 * 60 * 1000; // 15 minutes
 
 export type JobStatus =
   | "pending"
@@ -145,6 +150,47 @@ class JobManager {
 
         this.jobs.delete(id);
         logger.log(`🧹 Cleaned up job ${id} (created ${Math.round((Date.now() - job.createdAt) / 1000)}s ago)`);
+      }
+    }
+
+    this.cleanupOrphanFiles();
+  }
+
+  /** Remove untracked/abandoned files left in uploads or outputs directories */
+  private cleanupOrphanFiles(): void {
+    const trackedPaths = new Set<string>();
+    for (const job of this.jobs.values()) {
+      trackedPaths.add(path.resolve(job.inputPath));
+      trackedPaths.add(path.resolve(job.outputPath));
+    }
+
+    const cutoff = Date.now() - ORPHAN_MAX_AGE_MS;
+    for (const dir of [UPLOADS_DIR, OUTPUTS_DIR]) {
+      if (!fs.existsSync(dir)) continue;
+      let entries: string[];
+      try {
+        entries = fs.readdirSync(dir);
+      } catch (err) {
+        logger.error(`Failed to read directory for orphan cleanup: ${dir}`, err);
+        continue;
+      }
+
+      for (const name of entries) {
+        if (name.startsWith(".")) continue;
+        const fullPath = path.resolve(dir, name);
+        if (trackedPaths.has(fullPath)) continue;
+
+        try {
+          const stat = fs.statSync(fullPath);
+          if (stat.isFile() && stat.mtimeMs < cutoff) {
+            fs.unlinkSync(fullPath);
+            logger.log(`🗑️ Deleted orphan file: ${fullPath}`);
+          }
+        } catch (err: any) {
+          if (err?.code !== "ENOENT") {
+            logger.error(`Failed to clean up orphan file: ${fullPath}`, err);
+          }
+        }
       }
     }
   }

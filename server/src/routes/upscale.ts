@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import { logger } from "../utils/logger";
 import multer from "multer";
 import path from "path";
@@ -25,10 +25,26 @@ const outputsDir = path.resolve(__dirname, "../../outputs");
   }
 });
 
+interface UploadRequest extends Request {
+  _pendingUploadPath?: string;
+}
+
+function safeUnlink(filePath?: string): void {
+  if (!filePath) return;
+  fs.unlink(filePath, (err) => {
+    if (err && err.code !== "ENOENT") {
+      logger.error(`Failed to delete file: ${filePath}`, err);
+    } else if (!err) {
+      logger.log(`🗑️ Deleted incomplete/rejected upload: ${filePath}`);
+    }
+  });
+}
+
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => cb(null, uploadsDir),
-  filename: (_req, file, cb) => {
+  filename: (req, file, cb) => {
     const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1e9)}${path.extname(file.originalname)}`;
+    (req as UploadRequest)._pendingUploadPath = path.join(uploadsDir, uniqueName);
     cb(null, uniqueName);
   },
 });
@@ -48,6 +64,43 @@ const upload = multer({
 });
 
 /**
+ * Wrap multer upload to clean up partial files if the client disconnects mid-upload
+ */
+function handleUpload(req: UploadRequest, res: Response, next: NextFunction): void {
+  let clientDisconnected = false;
+
+  const onAborted = () => {
+    clientDisconnected = true;
+    const pendingPath = req.file?.path || req._pendingUploadPath;
+    if (pendingPath) {
+      logger.log(`⚠️ Client disconnected during upload, cleaning up: ${pendingPath}`);
+      safeUnlink(pendingPath);
+    }
+  };
+
+  req.on("aborted", onAborted);
+
+  upload.single("image")(req, res, (err: any) => {
+    req.off("aborted", onAborted);
+
+    if (err) {
+      safeUnlink(req.file?.path || req._pendingUploadPath);
+      if (clientDisconnected || req.aborted || res.destroyed) {
+        return;
+      }
+      return next(err);
+    }
+
+    if (clientDisconnected || req.aborted || res.destroyed) {
+      safeUnlink(req.file?.path || req._pendingUploadPath);
+      return;
+    }
+
+    next();
+  });
+}
+
+/**
  * POST /api/upscale
  * Upload image and start upscaling
  * Body (multipart/form-data):
@@ -61,22 +114,32 @@ const upload = multer({
  *   - customWidth?: string
  *   - ttaMode?: boolean
  */
-router.post("/", upload.single("image"), async (req: Request, res: Response) => {
+router.post("/", handleUpload, async (req: UploadRequest, res: Response) => {
+  let jobCreated = false;
+
   try {
     // Verify ALTCHA proof-of-work
     const altchaPayload = req.body.altcha;
     if (!altchaPayload) {
+      safeUnlink(req.file?.path);
       res.status(403).json({ error: "ALTCHA verification required" });
       return;
     }
     const verified = await verifySolution(altchaPayload, HMAC_KEY);
     if (!verified) {
+      safeUnlink(req.file?.path);
       res.status(403).json({ error: "ALTCHA verification failed" });
       return;
     }
 
     if (!req.file) {
       res.status(400).json({ error: "No image file uploaded" });
+      return;
+    }
+
+    // Abort before creating job if client disconnected during verification
+    if (req.aborted || res.destroyed) {
+      safeUnlink(req.file.path);
       return;
     }
 
@@ -102,6 +165,7 @@ router.post("/", upload.single("image"), async (req: Request, res: Response) => 
       model,
       scale,
     });
+    jobCreated = true;
 
     // Start upscaling asynchronously
     const options: UpscaleOptions = {
@@ -123,8 +187,13 @@ router.post("/", upload.single("image"), async (req: Request, res: Response) => 
       message: "Upscaling started",
     });
   } catch (error: any) {
+    if (!jobCreated) {
+      safeUnlink(req.file?.path || req._pendingUploadPath);
+    }
     logger.error("Upload error:", error);
-    res.status(500).json({ error: error.message });
+    if (!res.headersSent && !res.destroyed) {
+      res.status(500).json({ error: error.message });
+    }
   }
 });
 
